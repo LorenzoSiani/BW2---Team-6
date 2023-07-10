@@ -1,0 +1,27 @@
+body{
+    color: white;
+    background-color: black;
+}
+
+#arrow{ 
+    margin-top: 10px;
+    font-size: 2.5em;
+    color: white;
+    
+}
+
+#cover{
+   margin-right: 15%;
+}
+
+#artist-img{
+    width: 10%;
+    border-radius: 40px;
+    margin-right: 10px;
+}
+
+#play-button{
+    font-size: 1.8em;
+   
+}
+
