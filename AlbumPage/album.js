@@ -16,74 +16,104 @@ fetch(URL + albumId)
     const body = document.querySelector('body');
     const album = data;
 
-    // Update album header
+  // function to verify if the device is mobile
+    function isMobileDevice() {
+      return /Android|webOS|iPhone|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    }
+
+  // function to format the seconds in minutes
+    function getFormattedDuration(duration) {
+      const minutes = Math.floor(duration / 60);
+      const seconds = duration % 60;
+      return `${minutes}:${seconds.toString().padStart(2, '0')}`;
+    }
+    
+    // cover and album details
     const header = `
-      <header class="d-flex justify-content-around  w-100  mt-4">
+      <header class=" w-100  mt-4">
         
         <i id="arrow" class="bi bi-arrow-left-short"></i>
           <img id="cover" src="${album.cover_medium}" alt="" />
-        
-      </header>
-    `;
-
-    // Update album details
-    const details = `
-      <div class="main mx-4 mt-4">
+          <div class="main">
         <h2>${album.title}</h2>
-        <div class="d-flex align-items-center">
+        <div class ="details" >
+          <div class="artist">
           <img id="artist-img" src="${album.artist.picture_small}" alt="" />
           <h5 id="artist">${album.artist.name}</h5>
-        </div>
-        <p class="mt-3 text-secondary">
+          </div>
+          <p class="mt-3 text-secondary">
           Album <i class="bi bi-dot"></i> 
           <span>${album.release_date.split('-')[0]}</span>
         </p>
+        </div>
+        
       </div>
+      </header>
     `;
 
-    // Update commands section
+  
+    // command section with the icons
     const commands = `
-      <div class="comands d-flex justify-content-between align-items-center">
-        <div class="d-flex justify-content-between w-25 fs-3 mx-4">
+      <div class="comands">
+        <div id="first-comands" >
           <i id="heart" class="bi bi-heart"></i>
           <i class="bi bi-arrow-down-circle text-secondary"></i>
           <i class="bi bi-three-dots-vertical text-secondary"></i>
         </div>
-        <div class="d-flex justify-content-evenly align-items-center w-25 fs-1 mx-3">
+        <div id ="second-comands">
           <i id="shuffle" class="bi bi-shuffle text-secondary"></i>
           <i id="play-button" class="bi bi-play-circle-fill text-success mx-3"></i>
         </div>
       </div>
     `;
 
-    // Create track list
-    let trackList = '';
-    for (const track of album.tracks.data) {
-      let trackItem = `
-        <div class="row">
-          <div class="col-9 d-flex align-items-center mt-3">
-            <div class="d-flex flex-column">
-              <h5 class="mb-0">${track.title}</h5>
-              <p class="text-secondary fs-6 mb-0">${track.artist.name}</p>
-            </div>
+   
+  // tracklist 
+  let trackList = '';
+  
+  // adding a number of tracks
+  for (let i = 0; i < album.tracks.data.length; i++) {
+    const track = album.tracks.data[i];
+    let trackItem = `
+      <div class="row">
+        ${!isMobileDevice() ? `<div class="col-1 d-flex align-items-center mt-3">
+          <p class="text-secondary fs-6 mb-0">${i + 1}</p>
+        </div>` : ''}
+        <div class="col-8 col-lg-4 d-flex align-items-center mt-3">
+          <div class="d-flex flex-column">
+            <h5 class="mb-0">${track.title}</h5>
+            <p class="text-secondary fs-6 mb-0">${track.artist.name}</p>
           </div>
-          <div class="col-3 d-flex align-items-center justify-content-end">
+        </div>
+        <div class="col-3 col-lg-7 d-flex align-items-center justify-content-end">
+          ${
+            !isMobileDevice()
+              ? `<div class="d-flex align-items-center">
+               <p class="text-secondary fs-6 mb-0 mx-5">
+               ${track.rank}
+                 </p>
+                  <p class="text-secondary fs-6 mb-0 mx-5">
+                    ${getFormattedDuration(track.duration)}
+                  </p>
+                </div>`
+              : ''
+          }
+          <div class="d-flex align-items-center">
             <i class="bi bi-three-dots-vertical text-secondary"></i>
           </div>
         </div>
-      `;
+      </div>
+    `;
+    trackList += trackItem;
+  }
+  
+  
 
-    
-     
-     
-
-      trackList += trackItem;
-    }
 
     // Construct the updated HTML
     const updatedHTML = `
       ${header}
-      ${details}
+    
       ${commands}
       <div class="container">
         ${trackList}
