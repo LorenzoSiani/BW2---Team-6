@@ -80,15 +80,37 @@ fetch(URL + albumId)
       trackList += trackItem;
     }
 
+     // Create navbar
+     const navbar = `
+     <!-- nav bar -->
+     <nav class="navbar navbar-light bg-dark fixed-bottom">
+       <div class="container-fluid d-flex justify-content-around">
+         <a class="nav-link" href="#">
+           <ion-icon name="home-outline"></ion-icon>
+           Home
+         </a>
+         <a class="nav-link" href="#">
+           <ion-icon name="search-outline"></ion-icon>
+           Cerca
+         </a>
+         <a class="nav-link" href="#">
+           <ion-icon name="library-outline"></ion-icon>
+           La tua libreria
+         </a>
+       </div>
+     </nav>
+   `;
+
     // Construct the updated HTML
     const updatedHTML = `
-      ${header}
-      ${details}
-      ${commands}
-      <div class="container">
-        ${trackList}
-      </div>
-    `;
+    ${header}
+    ${details}
+    ${commands}
+    <div class="container">
+      ${trackList}
+    </div>
+    ${navbar}
+  `;
 
     // Update the HTML content of the body
     body.innerHTML = updatedHTML;
