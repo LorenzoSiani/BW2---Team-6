@@ -77,6 +77,7 @@ fetch(URL + albumId)
      
      
 
+      trackList += trackItem;
     }
 
     // Construct the updated HTML
