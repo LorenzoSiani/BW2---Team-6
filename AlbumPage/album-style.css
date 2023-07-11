@@ -32,7 +32,10 @@ body{
         font-size: 1.8em;
        
     }
-    
+    #albumDetails{
+        color: gray;
+        margin-top: 10px;
+    }
   
     .comands{
       display: flex;
@@ -87,6 +90,13 @@ body{
         margin-left: 20px;
         
     }
+    
+    #arrow:hover{
+        cursor: pointer;
+        
+    }
+
+
     main{
         display: flex;
     }
@@ -169,6 +179,22 @@ body{
         display: none;
       
     }
+
+    #artist-name:hover{
+        transform: scale(1.1);
+        text-decoration: underline;
+        cursor: pointer;
+        
+    }
     
+    #artists:hover{
+        
+        text-decoration: underline;
+        cursor: pointer;
+    }
+    #albumDetails{
+        margin-top: 12px;
+    }
+
 }
 
