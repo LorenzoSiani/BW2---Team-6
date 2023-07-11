@@ -61,7 +61,38 @@ fetch(URL + albumId)
         </div>
       </div>
     `;
+  
 
+  const trackDetails =
+  `
+      <div id="trackDetails" class="row mt-5 border-bottom border-secondary py-4">
+         <div class="col-1  align-items-center mt-3 d-none d-lg-flex ">
+          <p class="text-secondary fs-6 mb-0">#</p>
+        </div> 
+        <div class="col-8 col-lg-4 d-flex align-items-center mt-3">
+          <div class="d-flex flex-column">
+            <h5 class="mb-0 text-secondary">TITOLO</h5>
+            
+          </div>
+        </div>
+        <div class="col-3 col-lg-7 d-flex align-items-center justify-content-end">
+          
+             <div class="d-flex align-items-center d-none d-lg-flex">
+               <p class="text-secondary fs-6 mb-0 mx-5">
+                 RIPRODUZIONI
+                 </p>
+                  <p class="text-secondary fs-6 mb-0 mx-5">
+                  <i class="bi bi-clock"></i>
+                  </p>
+                </div>
+              
+        
+          <div class="d-flex d-lg-none align-items-center">
+            <i class="bi bi-three-dots-vertical text-secondary"></i>
+          </div>
+        </div>
+      </div>
+    `;
    
   // tracklist 
   let trackList = '';
@@ -109,6 +140,7 @@ fetch(URL + albumId)
       ${main}
       ${commands}
       <div class="container">
+        ${trackDetails}
         ${trackList}
       </div>
     `;

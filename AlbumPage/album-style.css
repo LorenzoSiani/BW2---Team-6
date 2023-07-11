@@ -71,6 +71,10 @@ body{
     .extra{
         display: none;
     }
+
+    #trackDetails{
+        display: none;
+    }
 }
 
 
