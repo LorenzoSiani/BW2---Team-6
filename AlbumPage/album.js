@@ -49,7 +49,6 @@ fetch(albumUrl + albumId)
     }
 
     // Utilizzo della funzione per generare il colore medio dell'immagine e applicarlo come background
-    
 
     // Funzione per formattare la durata dei brani
     function getFormattedDuration(duration) {
@@ -66,19 +65,21 @@ fetch(albumUrl + albumId)
 
     // Generazione del contenuto della pagina
     const main = `
-    <div class="dropdown">
-    <a class="btn  dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-     User
+    <div class="dropdown d-none d-xl-flex  ">
+    <a class="btn  dropdown-toggle text-light" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    
+    Epicode
     </a>
-    <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="#">Action</a></li>
-        <li><a class="dropdown-item" href="#">Another action</a></li>
-        <li><a class="dropdown-item" href="#">Something else here</a></li>
+    <ul class="dropdown-menu bg-dark ">
+        <li><a class="dropdown-item  text-light" href="#">Action</a></li>
+        <li><a class="dropdown-item text-light" href="#">Another action</a></li>
+        <li><a class="dropdown-item text-light" href="#">Something else here</a></li>
          </ul>
     </div>
       <main class="w-100 mt-4">
         <i id="arrow" class="bi bi-arrow-left-short"></i>
-        <img id="cover" src="${album.cover_xl}" alt="" />
+        <img id="cover" class= "d-none d-xl-block" src="${album.cover_xl}" alt="" />
+        <img id="cover" class= "d-flex d-lg-none" src="${album.cover_medium}" alt="" />
         <div class="title">
           <h2>${album.title}</h2>
           <div class="details">
@@ -102,7 +103,6 @@ fetch(albumUrl + albumId)
       </main>
     `;
 
-  
     // command section with the icons
     const commands = `
       <div class="comands mt-3">
@@ -147,14 +147,14 @@ fetch(albumUrl + albumId)
     for (let i = 0; i < album.tracks.data.length; i++) {
       const track = album.tracks.data[i];
       let trackItem = `
-        <div  class="row mt-5">
+        <div class="row mt-5 track-row" data-track-number="${i + 1}">
           <div class="col-1 align-items-center mt-3 d-none d-lg-flex">
             <p class="text-secondary fs-6 mb-0">${i + 1}</p>
           </div>
           <div class="col-8 col-lg-4 d-flex align-items-center mt-3">
             <div class="d-flex flex-column">
-              <h5 class="mb-0">${track.title}</h5>
-              <p id="artists" class="text-secondary fs-6 mb-0">${track.artist.name}</p>
+              <h5 class="track-title text-light">${track.title}</h5>
+              <p class="artist-name text-secondary fs-6 mb-0">${track.artist.name}</p>
             </div>
           </div>
           <div class="col-3 col-lg-7 d-flex align-items-center justify-content-end">
@@ -207,7 +207,7 @@ fetch(albumUrl + albumId)
     body.innerHTML = updatedHTML;
 
     const heart = document.getElementById('heart');
-    heart.addEventListener('click', function () {
+    heart.addEventListener('click', function() {
       if (heart.classList.contains('bi-heart-fill')) {
         heart.classList.remove('bi-heart-fill', 'text-success');
         heart.classList.add('bi-heart');
@@ -218,7 +218,7 @@ fetch(albumUrl + albumId)
     });
 
     const play = document.getElementById('play-button');
-    play.addEventListener('click', function () {
+    play.addEventListener('click', function() {
       if (play.classList.contains('bi-play-circle-fill')) {
         play.classList.remove('bi-play-circle-fill');
         play.classList.add('bi-pause-circle-fill');
@@ -229,7 +229,7 @@ fetch(albumUrl + albumId)
     });
 
     const shuffle = document.getElementById('shuffle');
-    shuffle.addEventListener('click', function () {
+    shuffle.addEventListener('click', function() {
       if (shuffle.classList.contains('bi-shuffle') && shuffle.classList.contains('text-secondary')) {
         shuffle.classList.remove('text-secondary');
         shuffle.classList.add('text-success');
@@ -239,27 +239,52 @@ fetch(albumUrl + albumId)
       }
     });
 
-    const artist = document.getElementById('artist-name');
-    artist.addEventListener('click', function(){
+    const artist = document.querySelector('.artist-name');
+    artist.addEventListener('click', function() {
       window.location.href = '../ArtistPage/artist.html';
     });
 
-   
+    const trackRows = document.querySelectorAll('.track-row');
+    trackRows.forEach(row => {
+      row.addEventListener('click', function() {
+        const selectedTrackNumber = row.dataset.trackNumber;
+        const trackTitle = row.querySelector('.track-title');
     
-    const arrow = document.getElementById('arrow');
-    arrow.addEventListener('click', function(){
-      window.location.href = '../HomePage/homepage.html';
+        if (row.classList.contains('selected')) {
+          row.classList.remove('selected');
+          trackTitle.classList.remove('text-success');
+          trackTitle.classList.add('text-light');
+          row.querySelector('.text-secondary').textContent = selectedTrackNumber;
+        } else {
+          trackRows.forEach(trackRow => {
+            trackRow.classList.remove('selected');
+            trackRow.querySelector('.track-title').classList.remove('text-success');
+            trackRow.querySelector('.track-title').classList.add('text-light');
+            trackRow.querySelector('.text-secondary').textContent = trackRow.dataset.trackNumber;
+          });
+    
+          row.classList.add('selected');
+          trackTitle.classList.remove('text-light');
+          trackTitle.classList.add('text-success');
+          row.querySelector('.text-secondary').innerHTML = '<i class="bi bi-play-fill text-success fs-3"></i>';
+        }
+      });
     });
     
-  const coverImage = album.cover_medium;
-    generateAverageColor(coverImage)
-  .then(color => {
-    body.style.background = `linear-gradient(to bottom, ${color} 0%, #000000 30%)`;
-  })
-  .catch(error => {
-    console.error(error);
-  });
 
+    const arrow = document.getElementById('arrow');
+    arrow.addEventListener('click', function() {
+      window.location.href = '../HomePage/homepage.html';
+    });
+
+    const coverImage = album.cover_medium;
+    generateAverageColor(coverImage)
+      .then(color => {
+        body.style.background = `linear-gradient(to bottom, ${color} 0%, #000000 30%)`;
+      })
+      .catch(error => {
+        console.error(error);
+      });
   })
   .catch(error => {
     console.error(error);
