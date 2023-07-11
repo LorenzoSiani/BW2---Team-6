@@ -15,12 +15,7 @@ fetch(URL + albumId)
   .then(data => {
     const body = document.querySelector('body');
     const album = data;
-
-  // function to verify if the device is mobile
-    function isMobileDevice() {
-      return /Android|webOS|iPhone|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-    }
-
+ 
   // function to format the seconds in minutes
     function getFormattedDuration(duration) {
       const minutes = Math.floor(duration / 60);
@@ -75,7 +70,7 @@ fetch(URL + albumId)
   for (let i = 0; i < album.tracks.data.length; i++) {
     const track = album.tracks.data[i];
     let trackItem = `
-      <div class="row">
+      <div class="row mt-5">
          <div class="col-1  align-items-center mt-3 d-none d-lg-flex ">
           <p class="text-secondary fs-6 mb-0">${i + 1}</p>
         </div> 
@@ -97,7 +92,7 @@ fetch(URL + albumId)
                 </div>
               
         
-          <div class="d-flex align-items-center">
+          <div class="d-flex d-lg-none align-items-center">
             <i class="bi bi-three-dots-vertical text-secondary"></i>
           </div>
         </div>
