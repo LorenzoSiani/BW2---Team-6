@@ -23,40 +23,40 @@ fetch(artistUrl + artistId
     console.log(detail.tracklist)
     const divArtist = document.getElementById('conteiner-artist')
     divArtist.innerHTML = `
-    
-    <div id="background-img" style="background-image: url('${detail.picture_big}')">
-      <h3>${detail.name}</h3>
-    </div>
+    <div class="position-relative">
+  <div id="background-img" style="background-image: url('${detail.picture_big}'); width: 100%">
+    <h3 class="position-absolute bottom-0">${detail.name}</h3>
+  </div>
+</div>
+<div>
+  <p>${detail.nb_fan} Ascoltatori Mensili</p>
+  <div class="d-flex justify-content-between align-items-center">
     <div>
-      <p>${detail.nb_fan} Ascoltatorei Mensili</p>
-      <div class="d-flex justify-content-between align-items-center">
-        <div>
-          <button>Seguiti</button
-          >
-        </div>
-        <div class="comands d-flex justify-content-between align-items-center">
-        <div class="d-flex justify-content-between w-25 fs-3 mx-4">
-          <i class="bi bi-three-dots-vertical text-secondary"></i>
-        </div>
-        <div class="d-flex justify-content-evenly align-items-center w-25 fs-1 mx-3">
-          <i id="shuffle" class="bi bi-shuffle text-secondary"></i>
-          <i id="play-button" class="bi bi-play-circle-fill text-success mx-3"></i>
-        </div>
+      <button>Seguiti</button>
+    </div>
+    <div class="comands d-flex justify-content-between align-items-center">
+      <div class="d-flex justify-content-between w-25 fs-3 mx-4">
+        <i class="bi bi-three-dots-vertical text-secondary"></i>
       </div>
+      <div class="d-flex justify-content-evenly align-items-center w-25 fs-1 mx-3">
+        <i id="shuffle" class="bi bi-shuffle text-secondary"></i>
+        <i id="play-button" class="bi bi-play-circle-fill text-success mx-3"></i>
       </div>
     </div>
-    <div class="d-flex justify-content-start">
-     <div>
-      <img id="artist-img" src="${detail.picture}" alt="" />
-     </div>
-      <div>
-        <h5>Brani che ti piacciono</h5>
-        <p>12 Brani dei ${detail.name}</p>
-      </div>
-    </div>
-    <h3 class="my-4">Popolari</h3>
-    <div id="tracklist-conteiner" class="d-flex flex-column">
-    </div>
+  </div>
+</div>
+<div class="d-flex justify-content-start">
+  <div>
+    <img id="artist-img" src="${detail.picture}" alt="" />
+  </div>
+  <div>
+    <h5>Brani che ti piacciono</h5>
+    <p>12 Brani dei ${detail.name}</p>
+  </div>
+</div>
+<h3 class="my-4">Popolari</h3>
+<div id="tracklist-conteiner" class="d-flex flex-column">
+</div>
     `
 
     const play = document.getElementById('play-button');
@@ -98,7 +98,7 @@ fetch(artistUrl + artistId
             divBrano.innerHTML=`
             
             <div class="d-flex my-3 align-items-center">
-              <div class="mx-2">${i + 1}</div>
+              <div class="p-2 me-3">${i + 1}</div>
               <div class="me-2"><img id="song-img" src="${el.album.cover}" alt="" /></div>
               <div>
                 <h5>${el.title}</h5>
