@@ -142,26 +142,25 @@ fetch(URL + albumId)
   
   
 // Create navbar
-     const navbar = `
-     <!-- nav bar -->
-     <nav class="navbar navbar-light bg-dark fixed-bottom">
-       <div class="container-fluid d-flex justify-content-around">
-         <a class="nav-link" href="#">
-           <ion-icon name="home-outline"></ion-icon>
-           Home
-         </a>
-         <a class="nav-link" href="#">
-           <ion-icon name="search-outline"></ion-icon>
-           Cerca
-         </a>
-         <a class="nav-link" href="#">
-           <ion-icon name="library-outline"></ion-icon>
-           La tua libreria
-         </a>
-       </div>
-     </nav>
-   `;
-
+const navbar = `
+<!-- nav bar -->
+<nav class="navbar navbar-light bg-dark fixed-bottom">
+  <div class="container-fluid d-flex justify-content-around">
+    <a class="nav-link" href="../Homepage/homepage.html">
+      <i class="bi bi-house"></i>
+      Home
+    </a>
+    <a class="nav-link" href="../Search/search.html">
+      <i class="bi bi-search"></i>
+      Cerca
+    </a>
+    <a class="nav-link" href="../ArtistPage/artist.html">
+      <i class="bi bi-bookshelf"></i>
+      La tua libreria
+    </a>
+  </div>
+</nav>
+`;
     // Construct the updated HTML
     const updatedHTML = `
       ${main}
