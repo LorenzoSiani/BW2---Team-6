@@ -17,12 +17,18 @@ fetch(URL + albumId)
     const album = data;
  
   // function to format the seconds in minutes
-    function getFormattedDuration(duration) {
-      const minutes = Math.floor(duration / 60);
-      const seconds = duration % 60;
+  function getFormattedDuration(duration) {
+    const hours = Math.floor(duration / 3600);
+    const minutes = Math.floor((duration % 3600) / 60);
+    const seconds = duration % 60;
+  
+    if (hours > 0) {
+      return `${hours} ora ${minutes.toString().padStart(2, '0')} minuti`;
+    } else {
       return `${minutes}:${seconds.toString().padStart(2, '0')}`;
     }
-    
+  }
+  
     // cover and album details
     const main = `
       <main class=" w-100  mt-4">
@@ -36,10 +42,14 @@ fetch(URL + albumId)
           <img id="artist-img" src="${album.artist.picture_small}" alt="" />
           <h5 id="artist">${album.artist.name}</h5>
           </div>
-          <p class="mt-3 text-secondary">
+          <div class = "d-flex mt-3">
+          <p class="text-secondary">
           Album <i class="bi bi-dot"></i> 
           <span>${album.release_date.split('-')[0]}</span>
-        </p>
+          <i class="bi bi-dot d-none d-lg-inline-block"></i>
+          </p>
+          <p class= "d-none d-lg-flex mx-2 "> ${album.nb_tracks} brani <span class="text-secondary mx-2">${getFormattedDuration(album.duration)} </span> </p>
+          </div>
         </div>
         
       </div>
@@ -49,11 +59,12 @@ fetch(URL + albumId)
   
     // command section with the icons
     const commands = `
-      <div class="comands">
+      <div class="comands mt-3">
         <div id="first-comands" >
           <i id="heart" class="bi bi-heart"></i>
           <i class="bi bi-arrow-down-circle text-secondary"></i>
-          <i class="bi bi-three-dots-vertical text-secondary"></i>
+          <i class="bi bi-three-dots-vertical text-secondary d-inline-block d-lg-none"></i>
+          <i class="bi bi-three-dots text-secondary d-none d-lg-inline-block"></i>
         </div>
         <div id ="second-comands">
           <i id="shuffle" class="bi bi-shuffle text-secondary"></i>
@@ -61,7 +72,35 @@ fetch(URL + albumId)
         </div>
       </div>
     `;
+  
 
+  // track details # TITOLO RIPRODUZIONI Durata
+
+  const trackDetails =
+  `
+      <div id="trackDetails" class="row mt-3 border-bottom border-secondary py-4">
+         <div class="col-1  align-items-center mt-3 d-none d-lg-flex ">
+          <p class="text-secondary fs-4 mb-0">#</p>
+        </div> 
+        <div class="col-8 col-lg-4 d-flex align-items-center mt-3">
+          <div class="d-flex flex-column">
+            <h5 class="mb-0 text-secondary">TITOLO</h5>
+            
+          </div>
+        </div>
+        <div class="col-3 col-lg-7 d-flex align-items-center justify-content-end">
+          
+             <div class="d-flex align-items-center d-none d-lg-flex">
+               <p class="text-secondary fs-6 mb-0 mx-5">
+                 RIPRODUZIONI
+                 </p>
+                  <p class="text-secondary fs-6 mb-0 mx-5">
+                  <i class="bi bi-clock fs-4"></i>
+                  </p>
+                </div>
+          </div>
+      </div>
+    `;
    
   // tracklist 
   let trackList = '';
@@ -132,13 +171,16 @@ fetch(URL + albumId)
       ${commands}
       ${commands}
       <div class="container">
+        ${trackDetails}
         ${trackList}
       </div>
+       
     `;
 
     // Update the HTML content of the body
     body.innerHTML = updatedHTML;
 
+    //clcik function to fill the heart  
     const heart = document.getElementById('heart');
     heart.addEventListener('click', function () {
       if (heart.classList.contains('bi-heart-fill')) {
@@ -150,6 +192,7 @@ fetch(URL + albumId)
       }
     });
 
+    // function to change the play button when clicked
     const play = document.getElementById('play-button');
     play.addEventListener('click', function () {
       if (play.classList.contains('bi-play-circle-fill')) {
@@ -161,16 +204,19 @@ fetch(URL + albumId)
       }
     });
 
+    // click function for changing color to shuflle
     const shuffle = document.getElementById('shuffle');
+
     shuffle.addEventListener('click', function () {
       if (shuffle.classList.contains('bi-shuffle') && shuffle.classList.contains('text-secondary')) {
         shuffle.classList.remove('text-secondary');
-        shuffle.classList.add('text-light');
-      } else {
-        shuffle.classList.remove('text-light');
+        shuffle.classList.add('text-success');
+             } else {
+        shuffle.classList.remove('text-success');
         shuffle.classList.add('text-secondary');
-      }
+        }
     });
+    
 
    
   })
