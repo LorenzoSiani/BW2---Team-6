@@ -144,7 +144,7 @@ fetch(URL + albumId)
 // Create navbar
 const navbar = `
 <!-- nav bar -->
-<nav class="navbar navbar-light bg-dark fixed-bottom">
+<nav class="navbar navbar-light  fixed-bottom">
   <div class="container-fluid d-flex justify-content-around">
     <a class="nav-link" href="../Homepage/homepage.html">
       <i class="bi bi-house"></i>
