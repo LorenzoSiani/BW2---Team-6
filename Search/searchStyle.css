@@ -1,0 +1,36 @@
+body {
+    color: white;
+    background-color: black;
+  }
+  
+#search-container {
+    display: flex;
+    align-items: center;
+    margin: 5vh;
+  }
+.col{
+    background-image: url('/assets/imgs/search/image-6.jpg');
+    height: 14vh;
+    max-width: 26vh;
+    background-size: cover;
+    margin: 5px;
+}
+  
+form.nosubmit {
+   border: none;
+   padding: 0;
+  }
+input[type="search"] {
+    border: none;
+    background: transparent;
+    margin: 0;
+    padding: 7px 8px;
+    font-size: 1.5em;
+    color: inherit;
+    border: 1px solid transparent;
+    border-radius: inherit;
+  }
+input[type="search"]::placeholder {
+    color: #bbb;
+  }
+
