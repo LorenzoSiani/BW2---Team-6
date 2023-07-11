@@ -66,6 +66,16 @@ fetch(URL + albumId)
 
     // Generazione del contenuto della pagina
     const main = `
+    <div class="dropdown">
+    <a class="btn  dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+     User
+    </a>
+    <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#">Action</a></li>
+        <li><a class="dropdown-item" href="#">Another action</a></li>
+        <li><a class="dropdown-item" href="#">Something else here</a></li>
+         </ul>
+    </div>
       <main class="w-100 mt-4">
         <i id="arrow" class="bi bi-arrow-left-short"></i>
         <img id="cover" src="${album.cover_xl}" alt="" />
