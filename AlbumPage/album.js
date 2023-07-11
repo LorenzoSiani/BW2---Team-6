@@ -76,9 +76,9 @@ fetch(URL + albumId)
     const track = album.tracks.data[i];
     let trackItem = `
       <div class="row">
-        ${!isMobileDevice() ? `<div class="col-1 d-flex align-items-center mt-3">
+         <div class="col-1  align-items-center mt-3 d-none d-lg-flex ">
           <p class="text-secondary fs-6 mb-0">${i + 1}</p>
-        </div>` : ''}
+        </div> 
         <div class="col-8 col-lg-4 d-flex align-items-center mt-3">
           <div class="d-flex flex-column">
             <h5 class="mb-0">${track.title}</h5>
@@ -86,18 +86,17 @@ fetch(URL + albumId)
           </div>
         </div>
         <div class="col-3 col-lg-7 d-flex align-items-center justify-content-end">
-          ${
-            !isMobileDevice()
-              ? `<div class="d-flex align-items-center">
+          
+             <div class="d-flex align-items-center d-none d-lg-flex">
                <p class="text-secondary fs-6 mb-0 mx-5">
                ${track.rank}
                  </p>
                   <p class="text-secondary fs-6 mb-0 mx-5">
                     ${getFormattedDuration(track.duration)}
                   </p>
-                </div>`
-              : ''
-          }
+                </div>
+              
+        
           <div class="d-flex align-items-center">
             <i class="bi bi-three-dots-vertical text-secondary"></i>
           </div>
