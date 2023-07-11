@@ -10,6 +10,7 @@
       integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="../assets/css/navbar-style.css" />
   </head>
   <body class="bg-dark">
@@ -104,6 +105,25 @@
         </div>
       </div>
     </div>
+    <!-- song bar -->
+    <div class="current-song-bar">
+      <div class="song-info">
+        <span class="song-title">Song Title</span> by
+        <span class="song-artist">Song Artist</span>
+      </div>
+      <div class="playback-controls">
+        <button class="control-button" id="computer-button">
+          <i class="bi bi-display"></i>
+        </button>
+        <button class="control-button" id="heart-button">
+          <i class="bi bi-heart"></i>
+        </button>
+        <i class="bi bi-play control-icon" id="play-icon"></i>
+      </div>
+      
+      </div>
+    </div>
+    <!-- nav bar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <a class="navbar-brand" href="#">Spotify</a>
       <button
@@ -126,7 +146,7 @@
             <a class="nav-link" href="../Search/search.html">Cerca</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../ArtistPage/artist.html >
+            <a class="nav-link" href="../ArtistPage/artist.html ">La tua Libreria </a>
           </li>
         </ul>
       </div>
@@ -135,8 +155,7 @@
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
-      crossorigin="anonymous"
-    ></script>
+      crossorigin="anonymous"></script>
     <script
       type="module"
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
