@@ -143,6 +143,7 @@ fetch(URL + albumId)
         ${trackDetails}
         ${trackList}
       </div>
+       
     `;
 
     // Update the HTML content of the body
