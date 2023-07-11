@@ -54,9 +54,7 @@ fetch(URL + albumId)
         
       </div>
       </main>
-    `;
-
-  
+    `;  
     // command section with the icons
     const commands = `
       <div class="comands mt-3">

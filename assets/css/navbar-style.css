@@ -56,3 +56,25 @@
   font-size: 18px;
   color: white;
 }
+
+.song-info {
+  overflow: hidden;
+}
+
+.song-title, .song-artist, .by {
+  display: inline-block;
+  white-space: nowrap;
+  animation: scroll-text 5s linear infinite;
+}
+
+.song-artist {
+  max-width: 50%; /* adjust this value as needed */}
+
+@keyframes scroll-text {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
