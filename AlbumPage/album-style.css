@@ -32,10 +32,7 @@ body{
         font-size: 1.8em;
        
     }
-    #albumDetails{
-        color: gray;
-        margin-top: 10px;
-    }
+    
   
     .comands{
       display: flex;
@@ -90,13 +87,6 @@ body{
         margin-left: 20px;
         
     }
-    
-    #arrow:hover{
-        cursor: pointer;
-        
-    }
-
-
     main{
         display: flex;
     }
@@ -179,37 +169,6 @@ body{
         display: none;
       
     }
-
-   .artist-name:hover{
-        transform: scale(1.1);
-        text-decoration: underline;
-        cursor: pointer;
-        
-    }
     
-    #artists:hover{
-        
-        text-decoration: underline;
-        cursor: pointer;
-    }
-    #albumDetails{
-        margin-top: 12px;
-    }
-
-    .dropdown{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-color: rgba(0, 0, 0, 0.582);
-        float: right;
-        margin-right: 30px;
-        margin-top: 10px;
-        border-radius: 60px;
-        
-
-    }
-
-
-
 }
 
