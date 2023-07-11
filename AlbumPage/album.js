@@ -1,8 +1,8 @@
-const URL = 'https://striveschool-api.herokuapp.com/api/deezer/album/75621062';
+const albumUrl = 'https://striveschool-api.herokuapp.com/api/deezer/album/';
 const addressBarContent = new URLSearchParams(location.search);
 const albumId = addressBarContent.get('id');
 
-fetch(URL + albumId)
+fetch(albumUrl + albumId)
   .then(response => {
     if (response.ok) {
       return response.json();
@@ -84,7 +84,7 @@ fetch(URL + albumId)
           <div class="details">
             <div class="artist">
               <img id="artist-img" src="${album.artist.picture_small}" alt="" />
-              <h5 id="artist-name">${album.artist.name}</h5>
+              <a href="http://127.0.0.1:5500/ArtistPage/artist.html?id=${album.artist.id}">${album.artist.name}</a>
             </div>
             <div id="albumDetails" class="d-flex">
               <p >

@@ -1,9 +1,9 @@
-const artistUrl = 'https://striveschool-api.herokuapp.com/api/deezer/artist/412';
+const artistUrl = 'https://striveschool-api.herokuapp.com/api/deezer/artist/';
 const addressCont = new URLSearchParams(location.search);
 const artistId = addressCont.get('id');
 
 console.log(artistId)
-fetch(artistUrl //+ artistId//
+fetch(artistUrl + artistId
 )
   .then((res) => {
     if (res.ok) {
