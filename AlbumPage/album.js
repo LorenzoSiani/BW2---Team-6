@@ -135,16 +135,13 @@ fetch(URL + albumId)
             <i class="bi bi-three-dots-vertical text-secondary"></i>
           </div>
         </div>
-      `;
-
-    
-     
-     
-
-      trackList += trackItem;
-    }
-
-     // Create navbar
+      </div>
+    `;
+    trackList += trackItem;
+  }
+  
+  
+// Create navbar
      const navbar = `
      <!-- nav bar -->
      <nav class="navbar navbar-light bg-dark fixed-bottom">
@@ -169,11 +166,11 @@ fetch(URL + albumId)
     const updatedHTML = `
       ${main}
       ${commands}
-      ${commands}
       <div class="container">
         ${trackDetails}
         ${trackList}
-      </div>
+        </div>
+        ${navbar}
        
     `;
 
