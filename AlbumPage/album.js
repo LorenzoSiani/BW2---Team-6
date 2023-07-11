@@ -54,9 +54,7 @@ fetch(URL + albumId)
         
       </div>
       </main>
-    `;
-
-  
+    `;  
     // command section with the icons
     const commands = `
       <div class="comands mt-3">
@@ -140,11 +138,29 @@ fetch(URL + albumId)
     trackList += trackItem;
   }
   
-  
+  // Create current song bar
+const currentSongBar = `
+<!-- Current song bar -->
+<div class="current-song-bar">
+  <div class="song-info">
+    <span class="song-title">Song Title</span> 
+    <span class="song-artist">Song Artist</span>
+  </div>
+  <div class="playback-controls">
+    <button class="control-button" id="computer-button">
+      <i class="bi bi-display"></i>
+    </button>
+    <button class="control-button" id="heart-button">
+      <i class="bi bi-heart"></i>
+    </button>
+    <i class="bi bi-play control-icon" id="play-icon"></i>
+  </div>
+</div>
+`;
 // Create navbar
 const navbar = `
 <!-- nav bar -->
-<nav class="navbar navbar-light bg-dark fixed-bottom">
+<nav class="navbar navbar-light  fixed-bottom">
   <div class="container-fluid d-flex justify-content-around">
     <a class="nav-link" href="../Homepage/homepage.html">
       <i class="bi bi-house"></i>
@@ -163,15 +179,15 @@ const navbar = `
 `;
     // Construct the updated HTML
     const updatedHTML = `
-      ${main}
-      ${commands}
-      <div class="container">
-        ${trackDetails}
-        ${trackList}
-        </div>
-        ${navbar}
-       
-    `;
+    ${main}
+    ${commands}
+    <div class="container">
+      ${trackDetails}
+      ${trackList}
+    </div>
+    ${currentSongBar}
+    ${navbar}
+  `;
 
     // Update the HTML content of the body
     body.innerHTML = updatedHTML;

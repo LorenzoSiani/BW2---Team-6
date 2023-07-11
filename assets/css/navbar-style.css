@@ -3,15 +3,78 @@
   bottom: 0;
   width: 100%;
   z-index: 9999;
-  background-color: #f8f9fa;
   opacity: 0.9;
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
 }
 .nav-link {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.nav-link ion-icon {
+/* i {
   font-size: 24px;
   margin-bottom: 4px;
+} */
+/* Current song bar styles */
+.current-song-bar {
+  margin:15px;
+  position: fixed;
+  bottom: 50px;
+  left: 0;
+  right: 0;
+  height: 50px;
+  background-color: #282828;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16px;
+}
+
+.song-info {
+  font-size: 14px;
+}
+
+.playback-controls {
+  display: flex;
+  align-items: center;
+}
+
+.control-button {
+  background-color: transparent;
+  border: none;
+}
+
+.control-button:not(:last-child),
+.control-icon:not(:last-child) {
+  margin-right: 16px;
+}
+
+.control-button,
+.control-icon {
+  font-size: 18px;
+  color: white;
+}
+
+.song-info {
+  overflow: hidden;
+}
+
+.song-title, .song-artist, .by {
+  display: inline-block;
+  white-space: nowrap;
+  animation: scroll-text 5s linear infinite;
+}
+
+.song-artist {
+  max-width: 50%; /* adjust this value as needed */}
+
+@keyframes scroll-text {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
 }
