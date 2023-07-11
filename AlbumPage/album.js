@@ -67,7 +67,7 @@ fetch(URL + albumId)
   `
       <div id="trackDetails" class="row mt-5 border-bottom border-secondary py-4">
          <div class="col-1  align-items-center mt-3 d-none d-lg-flex ">
-          <p class="text-secondary fs-6 mb-0">#</p>
+          <p class="text-secondary fs-4 mb-0">#</p>
         </div> 
         <div class="col-8 col-lg-4 d-flex align-items-center mt-3">
           <div class="d-flex flex-column">
@@ -82,7 +82,7 @@ fetch(URL + albumId)
                  RIPRODUZIONI
                  </p>
                   <p class="text-secondary fs-6 mb-0 mx-5">
-                  <i class="bi bi-clock"></i>
+                  <i class="bi bi-clock fs-4"></i>
                   </p>
                 </div>
               
