@@ -24,12 +24,12 @@ fetch(URL + albumId)
     }
     
     // cover and album details
-    const header = `
-      <header class=" w-100  mt-4">
+    const main = `
+      <main class=" w-100  mt-4">
         
         <i id="arrow" class="bi bi-arrow-left-short"></i>
           <img id="cover" src="${album.cover_medium}" alt="" />
-          <div class="main">
+          <div class="title">
         <h2>${album.title}</h2>
         <div class ="details" >
           <div class="artist">
@@ -43,7 +43,7 @@ fetch(URL + albumId)
         </div>
         
       </div>
-      </header>
+      </main>
     `;
 
   
@@ -106,8 +106,7 @@ fetch(URL + albumId)
 
     // Construct the updated HTML
     const updatedHTML = `
-      ${header}
-    
+      ${main}
       ${commands}
       <div class="container">
         ${trackList}
