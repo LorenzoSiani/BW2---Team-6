@@ -190,6 +190,24 @@ fetch(albumUrl + albumId)
       trackList += trackItem
     }
 
+    const currentSongBar = `
+    <!-- Current song bar -->
+    <div class="current-song-bar">
+      <div class="song-info">
+        <span class="song-title">Song Title</span> 
+        <span class="song-artist">Song Artist</span>
+      </div>
+      <div class="playback-controls">
+        <button class="control-button" id="computer-button">
+          <i class="bi bi-display"></i>
+        </button>
+        <button class="control-button" id="heart-button">
+          <i class="bi bi-heart"></i>
+        </button>
+        <i class="bi bi-play control-icon" id="play-icon"></i>
+      </div>
+    </div>
+    `;
     const navbar = `
       <nav class="navbar navbar-light bg-dark fixed-bottom">
         <div class="container-fluid d-flex justify-content-around">
@@ -216,6 +234,7 @@ fetch(albumUrl + albumId)
         ${trackDetails}
         ${trackList}
       </div>
+      ${currentSongBar}
       ${navbar}
     `
 
