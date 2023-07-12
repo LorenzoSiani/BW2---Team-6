@@ -136,25 +136,32 @@ fetch(URL + albumId)
     trackList += trackItem;
   }
   
+  let currentTrack = null;
+
+for (let i = 0; i < album.tracks.data.length; i++) {
+  const track = album.tracks.data[i];
+  currentTrack = track;
+}
   // Create current song bar
-const currentSongBar = `
-<!-- Current song bar -->
-<div class="current-song-bar">
-  <div class="song-info">
-    <span class="song-title">Song Title</span> 
-    <span class="song-artist">Song Artist</span>
+  const currentSongBar = `
+  <!-- Current song bar -->
+  <div class="current-song-bar">
+    <div class="song-info">
+      <span class="song-title">${currentTrack.title}</span> 
+      <span class="separator"> by </span>
+      <span class="song-artist">${currentTrack.artist.name}</span>
+    </div>
+    <div class="playback-controls">
+      <button class="control-button" id="computer-button">
+        <i class="bi bi-display"></i>
+      </button>
+      <button class="control-button" id="heart-button">
+        <i class="bi bi-heart"></i>
+      </button>
+      <i class="bi bi-play control-icon" id="play-icon"></i>
+    </div>
   </div>
-  <div class="playback-controls">
-    <button class="control-button" id="computer-button">
-      <i class="bi bi-display"></i>
-    </button>
-    <button class="control-button" id="heart-button">
-      <i class="bi bi-heart"></i>
-    </button>
-    <i class="bi bi-play control-icon" id="play-icon"></i>
-  </div>
-</div>
-`;
+  `;
 // Create navbar
 const navbar = `
 <!-- nav bar -->
