@@ -295,14 +295,17 @@ fetch(albumUrl + albumId)
 
     const arrow = document.getElementById('arrow')
     arrow.addEventListener('click', function () {
-      window.location.href = '../Search/search.html'
+      history.back();
     })
 
     const coverImage = album.cover_medium
     generateAverageColor(coverImage)
-      .then((color) => {
-        body.style.background = `linear-gradient(to bottom, ${color} 0%, #000000 30%)`
-      })
+    .then((color) => {
+      body.style.background = `linear-gradient(to bottom, ${color} 0%, #000000 30%)`
+      body.style.backgroundRepeat = 'no-repeat'; // Prevent background repeat
+      body.style.backgroundSize = 'cover'; 
+      
+    })
       .catch((error) => {
         console.error(error)
       })
