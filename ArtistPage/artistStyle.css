@@ -35,8 +35,10 @@ button{
 @media  screen  and (max-width:1200px){
     .comands {
         margin-left: 20px;
+        display: flex;
+        justify-content: space-between;
       }
-    }
+    
   #background-img{
       height: 300px;
       background-size: cover;
@@ -45,7 +47,27 @@ button{
   #tracklist-conteiner{
       margin-left: 5%;
       margin-right: 5%;
-  
+    
+      }
+      
+      #first-comands {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin-left: 30px;
+          width: 20%;
+          font-size: 1.7em;
+      }
+      
+      #second-comands{
+          display: flex;
+          align-items: center;
+          font-size: 1.7em;
+          margin-right: 5%;
+      }
+      #play-button{
+          font-size: 2.1em;
+      }
 }
 
 @media  screen and (min-width: 1200px ) {
