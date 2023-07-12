@@ -24,7 +24,7 @@ fetch(artistUrl + artistId
     const divArtist = document.getElementById('conteiner-artist')
     divArtist.innerHTML = `
     <div class="position-relative">  
-    <div id="background-img" style="background-image: url('${detail.picture_big}'); ">
+    <div id="background-img" style="background-image: url('${detail.picture_xl}'); ">
       <h3 class="position-absolute bottom-0">${detail.name}</h3>
       <i id="arrow" class="bi bi-arrow-left-short position-absolute" style="top: 0; transform: translateY(2%); left: 20px;"></i>
     </div>
@@ -45,7 +45,7 @@ fetch(artistUrl + artistId
    
 
 
-<div class="d-flex justify-content-start p-2">
+<div class="d-flex justify-content-start p-2 mx-3">
   <div>
     <img id="artist-img" src="${detail.picture}" alt="" />
   </div>
@@ -54,7 +54,7 @@ fetch(artistUrl + artistId
     <p>12 Brani dei ${detail.name}</p>
   </div>
 </div>
-<h3 class="my-4">Popolari</h3>
+<h3 class="mx-4 mt-3" >Popolari</h3>
 <div id="tracklist-conteiner" class="d-flex flex-column">
 </div>
     `
@@ -106,14 +106,14 @@ arrow.addEventListener('click', function(){
             divBrano.classList.add('container')
             divBrano.innerHTML=`
             <div class="row mt-5 track-row" data-track-number="${i + 1}">
-            <div class="col-1 align-items-center mt-3 d-none d-lg-flex">
+            <div class="col-1 align-items-center mt-5 d-lg-flex">
               <p class="text-secondary fs-6 mb-0">${i + 1}</p>
             </div>
             <div class="col-8 col-lg-4 d-flex align-items-center mt-3">
               <div class="d-flex align-items-center ">
               <img id="song-img" src="${el.album.cover}" alt="" />
               <div class="d-flex flex-column mx-5" >
-                <h5 class="track-title text-light">${el.title}</h5>
+                <h5 class="track-title text-light ">${el.title}</h5>
                 <p class="text-secondary fs-6 ">
                 ${el.rank}
               </p>
@@ -137,7 +137,35 @@ arrow.addEventListener('click', function(){
             `
             divTracks.appendChild(divBrano)
         });
+        function addClickEventToTrackRows() {
+          const trackRows = document.querySelectorAll('.track-row');
+          trackRows.forEach(row => {
+            row.addEventListener('click', function() {
+              const selectedTrackNumber = row.dataset.trackNumber;
+              const trackTitle = row.querySelector('.track-title');
         
+              if (row.classList.contains('selected')) {
+                row.classList.remove('selected');
+                trackTitle.classList.remove('text-success');
+                trackTitle.classList.add('text-light');
+                row.querySelector('.text-secondary').textContent = selectedTrackNumber;
+              } else {
+                trackRows.forEach(trackRow => {
+                  trackRow.classList.remove('selected');
+                  trackRow.querySelector('.track-title').classList.remove('text-success');
+                  trackRow.querySelector('.track-title').classList.add('text-light');
+                  trackRow.querySelector('.text-secondary').textContent = trackRow.dataset.trackNumber;
+                });
+        
+                row.classList.add('selected');
+                trackTitle.classList.remove('text-light');
+                trackTitle.classList.add('text-success');
+                row.querySelector('.text-secondary').innerHTML = '<i class="bi bi-play-fill text-success fs-3"></i>';
+              }
+            });
+          });
+        }
+        addClickEventToTrackRows();
     })
   })
   .catch((err) => {
