@@ -18,7 +18,7 @@
 } */
 /* Current song bar styles */
 .current-song-bar {
-  margin:15px;
+  margin: 15px;
   position: fixed;
   bottom: 50px;
   left: 0;
@@ -60,6 +60,8 @@
 .song-info {
   overflow: hidden;
 }
+
+
 
 .scrolling-container {
   display: inline-block;
