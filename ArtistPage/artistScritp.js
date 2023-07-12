@@ -1,7 +1,7 @@
 const artistUrl = 'https://striveschool-api.herokuapp.com/api/deezer/artist/';
 const addressCont = new URLSearchParams(location.search);
 const artistId = addressCont.get('id');
-
+const body = document.querySelector('body')
 console.log(artistId)
 fetch(artistUrl + artistId
 )
@@ -20,6 +20,43 @@ fetch(artistUrl + artistId
   })
   .then((detail) => {
     
+    function generateAverageColor(imageUrl) {
+      return new Promise((resolve, reject) => {
+        const img = new Image()
+        img.crossOrigin = 'Anonymous'
+        img.src = imageUrl
+        img.addEventListener('load', () => {
+          const canvas = document.createElement('canvas')
+          canvas.width = img.width
+          canvas.height = img.height
+          const context = canvas.getContext('2d')
+          context.drawImage(img, 0, 0)
+          const imageData = context.getImageData(
+            0,
+            0,
+            img.width,
+            img.height
+          ).data
+          let totalRed = 0
+          let totalGreen = 0
+          let totalBlue = 0
+
+          for (let i = 0; i < imageData.length; i += 4) {
+            totalRed += imageData[i]
+            totalGreen += imageData[i + 1]
+            totalBlue += imageData[i + 2]
+          }
+
+          const pixelCount = imageData.length / 4
+          const averageRed = Math.floor(totalRed / pixelCount)
+          const averageGreen = Math.floor(totalGreen / pixelCount)
+          const averageBlue = Math.floor(totalBlue / pixelCount)
+          const averageColor = `rgb(${averageRed},${averageGreen},${averageBlue})`
+          resolve(averageColor)
+        })
+        img.addEventListener('error', reject)
+      })
+    }
     console.log('DETAIL', detail)
     console.log(detail.tracklist)
     const divArtist = document.getElementById('conteiner-artist')
@@ -193,6 +230,17 @@ const arrow = document.getElementById('arrow')
         }
         addClickEventToTrackRows();
     })
+    const coverImage = detail.picture_xl
+    generateAverageColor(coverImage)
+    .then((color) => {
+      body.style.background = `linear-gradient(to bottom, ${color} 0%, #000000 70%)`
+      body.style.backgroundRepeat = 'no-repeat'; // Prevent background repeat
+      body.style.backgroundSize = 'cover'; 
+      
+    })
+      .catch((error) => {
+        console.error(error)
+      })
   })
   .catch((err) => {
     console.log(err)

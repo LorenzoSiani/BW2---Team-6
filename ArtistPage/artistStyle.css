@@ -35,17 +35,19 @@ button{
 }
 
 .not-clicked{
-    
-    border: 5px inset rgba(0,0,0,0.83);
+    background-color: transparent;
+    border: 5px outset rgba(0,0,0,0.83);
 }
 
 .clicked{
-    border: 5px outset rgba(0,0,0,0.83);
-    
+   
+    border: 5px inset rgba(0,0,0,0.83);
+    background-color: transparent;
 }
 
 .container h5:hover{
     cursor: pointer;
+    
 }
 
 @media  screen  and (max-width:1200px){
