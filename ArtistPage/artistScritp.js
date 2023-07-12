@@ -23,29 +23,41 @@ fetch(artistUrl + artistId
     console.log(detail.tracklist)
     const divArtist = document.getElementById('conteiner-artist')
     divArtist.innerHTML = `
-    <div class="position-relative">
-  <div id="background-img" style="background-image: url('${detail.picture_big}'); width: 100%">
-    <h3 class="position-absolute bottom-0">${detail.name}</h3>
+    <div class="position-relative">  
+    <div id="background-img" style="background-image: url('${detail.picture_big}'); ">
+      <h3 class="position-absolute bottom-0">${detail.name}</h3>
+      <i id="arrow" class="bi bi-arrow-left-short position-absolute" style="top: 0; transform: translateY(2%); left: 20px;"></i>
+    </div>
   </div>
-</div>
 <div>
-  <p>${detail.nb_fan} Ascoltatori Mensili</p>
-  <div class="d-flex justify-content-between align-items-center">
-    <div>
-      <button>Seguiti</button>
-    </div>
-    <div class="comands d-flex justify-content-between align-items-center">
-      <div class="d-flex justify-content-between w-25 fs-3 mx-4">
-        <i class="bi bi-three-dots-vertical text-secondary"></i>
+  <p class="p-1 mx-0 text-left text-secondary" >${detail.nb_fan} Ascoltatori Mensili</p>
+</div>
+<div class="container">
+  <div class="row align-items-center justify-content-around">
+    <div class="col col-sm-6 d-flex align-items-center justify-content-center">
+      <button class"text-center"> Seguiti</button>
+      <i class="bi bi-three-dots-vertical text-secondary" style="font-size: 2em;"></i>
+      <div class="comands d-flex justify-content-between align-items-center">
+        <div class="d-flex justify-content-between w-25 fs-3 mx-4">
+          
+        </div>
       </div>
-      <div class="d-flex justify-content-evenly align-items-center w-25 fs-1 mx-3">
-        <i id="shuffle" class="bi bi-shuffle text-secondary"></i>
-        <i id="play-button" class="bi bi-play-circle-fill text-success mx-3"></i>
+    </div>
+   
+    <div class="col col-sm-3">
+      <div class="d-flex justify-content-center align-items-center w-100 h-100">
+        <i id="shuffle" class="bi bi-shuffle text-secondary" style="font-size: 2em;"></i>
+      </div>
+    </div>
+    <div class="col col-sm-3">
+      <div class="d-flex justify-content-between align-items-center w-100 h-100">
+        <i id="play-button" class="bi bi-play-circle-fill text-success mx-3" style="font-size: 4em;"></i>
       </div>
     </div>
   </div>
 </div>
-<div class="d-flex justify-content-start">
+
+<div class="d-flex justify-content-start p-2">
   <div>
     <img id="artist-img" src="${detail.picture}" alt="" />
   </div>
@@ -58,6 +70,11 @@ fetch(artistUrl + artistId
 <div id="tracklist-conteiner" class="d-flex flex-column">
 </div>
     `
+// COLLEGAMENTO ARROW
+const arrow = document.getElementById('arrow');
+arrow.addEventListener('click', function(){
+  window.location.href = '../HomePage/homepage.html';
+});
 
     const play = document.getElementById('play-button');
     play.addEventListener('click', function () {
