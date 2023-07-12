@@ -257,11 +257,11 @@ const navbar = `
           const selectedTrackNumber = row.dataset.trackNumber
           const trackTitle = row.querySelector('.track-title')
     
-         ù
+         
           const trackIndex = selectedTrackNumber - 1;
           const track = album.tracks.data[trackIndex];
     
-  ù
+  
           const currentSongBar = document.querySelector('.current-song-bar');
           const currentSongTitle = currentSongBar.querySelector('.song-title');
           const currentSongArtist = currentSongBar.querySelector('.song-artist');

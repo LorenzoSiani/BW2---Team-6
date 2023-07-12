@@ -35,7 +35,9 @@
 .current-song-bar{
   display:none;
 }
-
+.nav-link-white {
+  color: white;
+}
 .song-info {
   font-size: 14px;
 }
@@ -80,4 +82,21 @@
   to {
     transform: translateX(-100%);
   }
+}
+@media (min-width: 768px) {
+  .current-song-bar,
+  nav.navbar {
+      display: none;
+  }
+  footer {
+      display: block;
+  }
+}
+
+
+footer {
+  background-color: black;
+  z-index: 9999;
+  position: fixed;
+  display: none; 
 }
