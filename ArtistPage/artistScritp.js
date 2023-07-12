@@ -1,9 +1,9 @@
-const artistUrl = 'https://striveschool-api.herokuapp.com/api/deezer/artist/412';
+const artistUrl = 'https://striveschool-api.herokuapp.com/api/deezer/artist/';
 const addressCont = new URLSearchParams(location.search);
 const artistId = addressCont.get('id');
 
 console.log(artistId)
-fetch(artistUrl //+ artistId//
+fetch(artistUrl + artistId
 )
   .then((res) => {
     if (res.ok) {
@@ -23,41 +23,44 @@ fetch(artistUrl //+ artistId//
     console.log(detail.tracklist)
     const divArtist = document.getElementById('conteiner-artist')
     divArtist.innerHTML = `
-    
-    <div id="background-img" style="background-image: url('${detail.picture_big}')">
-      <h3>${detail.name}</h3>
+    <div class="position-relative">  
+    <div id="background-img" style="background-image: url('${detail.picture_big}'); ">
+      <h3 class="position-absolute bottom-0">${detail.name}</h3>
+      <i id="arrow" class="bi bi-arrow-left-short position-absolute" style="top: 0; transform: translateY(2%); left: 20px;"></i>
     </div>
-    <div>
-      <p>${detail.nb_fan} Ascoltatorei Mensili</p>
-      <div class="d-flex justify-content-between align-items-center">
-        <div>
-          <button>Seguiti</button
-          >
+  </div>
+<div>
+  <p class="p-1 mx-0 text-left text-secondary" >${detail.nb_fan} Ascoltatori Mensili</p>
+</div>
+<div class="comands mt-3">
+        <div id="first-comands">
+        <button class"text-center "> Seguiti</button>
+        <i class="bi bi-three-dots text-white text-right"></i>
         </div>
-        <div class="comands d-flex justify-content-between align-items-center">
-        <div class="d-flex justify-content-between w-25 fs-3 mx-4">
-          <i class="bi bi-three-dots-vertical text-secondary"></i>
-        </div>
-        <div class="d-flex justify-content-evenly align-items-center w-25 fs-1 mx-3">
+        <div id="second-comands">
           <i id="shuffle" class="bi bi-shuffle text-secondary"></i>
           <i id="play-button" class="bi bi-play-circle-fill text-success mx-3"></i>
         </div>
       </div>
-      </div>
-    </div>
-    <div class="d-flex justify-content-start">
-     <div>
-      <img id="artist-img" src="${detail.picture}" alt="" />
-     </div>
-      <div>
-        <h5>Brani che ti piacciono</h5>
-        <p>12 Brani dei ${detail.name}</p>
-      </div>
-    </div>
-    <h3 class="my-4">Popolari</h3>
-    <div id="tracklist-conteiner" class="d-flex flex-column">
-    </div>
+   
+
+
+<div class="d-flex justify-content-start p-2">
+  <div>
+    <img id="artist-img" src="${detail.picture}" alt="" />
+  </div>
+  <div>
+    <h5>Brani che ti piacciono</h5>
+    <p>12 Brani dei ${detail.name}</p>
+  </div>
+</div>
+<h3 class="my-4">Popolari</h3>
+<div id="tracklist-conteiner" class="d-flex flex-column">
+</div>
     `
+
+    
+
 // COLLEGAMENTO ARROW
 const arrow = document.getElementById('arrow');
 arrow.addEventListener('click', function(){
@@ -100,24 +103,41 @@ arrow.addEventListener('click', function(){
         
         brani.data.forEach((el,i) => {
             const divBrano = document.createElement('div')
+            divBrano.classList.add('container')
             divBrano.innerHTML=`
-            
-            <div class="d-flex my-3 align-items-center">
-              <div class="mx-2">${i + 1}</div>
-              <div class="me-2"><img id="song-img" src="${el.album.cover}" alt="" /></div>
-              <div>
-                <h5>${el.title}</h5>
-                <p>${el.rank}</p>
-              </div>
-              <div>
-               <i class="bi bi-three-dots-vertical text-white"></i>
+            <div class="row mt-5 track-row" data-track-number="${i + 1}">
+            <div class="col-1 align-items-center mt-3 d-none d-lg-flex">
+              <p class="text-secondary fs-6 mb-0">${i + 1}</p>
+            </div>
+            <div class="col-8 col-lg-4 d-flex align-items-center mt-3">
+              <div class="d-flex align-items-center ">
+              <img id="song-img" src="${el.album.cover}" alt="" />
+              <div class="d-flex flex-column mx-5" >
+                <h5 class="track-title text-light">${el.title}</h5>
+                <p class="text-secondary fs-6 ">
+                ${el.rank}
+              </p>
+                </div>
               </div>
             </div>
+            <div class="col-3 col-lg-7 d-flex align-items-center justify-content-end">
+              <div class="d-flex align-items-center d-none d-lg-flex">
+                
+               
+              </div>
+              <div class="d-flex  align-items-center">
+                <i class="bi bi-three-dots-vertical text-secondary"></i>
+              </div>
+            </div>
+          </div>
+
+           
 
           
             `
             divTracks.appendChild(divBrano)
         });
+        
     })
   })
   .catch((err) => {

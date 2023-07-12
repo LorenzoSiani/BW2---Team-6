@@ -4,8 +4,6 @@ const searchUrl= 'https://striveschool-api.herokuapp.com/api/deezer/search?q='
 const inputSearch = document.querySelector('form')
 inputSearch.addEventListener('submit', function(e){
     e.preventDefault()
-    let newCont = document.getElementById('new-cont')
-    newCont.innerHTML=``
     const value = document.querySelector('input').value
     console.log(searchUrl + value)
     fetch(searchUrl + value)
@@ -16,7 +14,7 @@ inputSearch.addEventListener('submit', function(e){
         console.log(idArtist);
         document.getElementById('cards-cont').classList.add('d-none')
         
-        
+        let newCont = document.getElementById('new-cont')
        
         detail.data.forEach(el => {
             let newDiv = document.createElement('div')
@@ -32,7 +30,6 @@ inputSearch.addEventListener('submit', function(e){
             `
             newCont.appendChild(newDiv)
         });
-        document.querySelector('input').value = ''
        
     })
 

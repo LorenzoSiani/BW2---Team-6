@@ -19,31 +19,72 @@ body{
     border-radius: 40px;
     margin-right: 5px;
 }
-#song-img{
-    width: 100%;
-   
-}
+
 #play-button{
     font-size: 1.8em; 
 }
 button{
-    border-radius: 4px 4px;
+  
+    border-style: none;
     background-color: black;
     color: white;
     
     padding: 6px;
 }
-@media (min-width: 576px) {
+
+@media  screen  and (max-width:1200px){
     .comands {
-      margin-left: 20px;
+        margin-left: 20px;
+      }
     }
+  #background-img{
+      height: 300px;
+      background-size: cover;
   }
-#background-img{
-    height: 300px;
-    background-size: cover;
+  
+  #tracklist-conteiner{
+      margin-left: 5%;
+      margin-right: 5%;
+  
 }
 
-#tracklist-conteiner{
-    margin-left: 5%;
-    margin-right: 5%;
+@media  screen and (min-width: 1200px ) {
+      #background-img{
+      width: 100%;
+      height: 700px;
+      background-size: 100%;  
+    background-repeat: no-repeat;
+  }
+    #detailName{
+        font-size: 3em;
+    }
+    .comands{
+        display: flex;
+        justify-content: flex-end;
+        flex-direction: row-reverse;
+        margin-left: 2%;
+        margin-bottom: 2%;
+      }
+      
+      #first-comands {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          width: 12%;
+         
+          font-size: 1.3em;
+      }
+      
+      #second-comands{
+          display: flex;
+          align-items: center;
+          font-size: 2.7em;
+          margin-right: 2%;
+         
+      }
+
+      #shuffle{
+        display: none;
+      
+    }
 }
