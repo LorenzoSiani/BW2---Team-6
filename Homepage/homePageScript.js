@@ -15,6 +15,7 @@ const homePageRend = function(){
         .then((detail)=>{
             console.log(detail)
             let newDiv = document.createElement('div')
+            newDiv.classList.add('col')
             newDiv.innerHTML=`
             
              <div class="Hcard card">

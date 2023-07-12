@@ -1,10 +1,67 @@
-#sixCards div {
-    height: 100px;
-   
+body {
+    color: white;
+    background-color: black;
+  }
+  main{
+    width: 60%;
+  }
+  p{
+    margin: 0;
+  }
+li{
+    list-style: none;
 }
+ul{
+    padding: 0;
+}
+#artist-img{
+    width: 50px;
+    height: 50px;
+    border-radius: 40px;
+    margin-right: 5px;
+}
+.Hcard{
+    width: 200px;
+}
+.img-sect-2{
+    height: 60px;
+}
+.six-cards{
+    background-color: rgb(59, 59, 59);
+    padding: 0;
+}
+a, a:hover, a:focus, a:active {
+    text-decoration: none;
+    color: inherit;
+}
+#img-top{
+    height: 160px;
+}
+#img-top img{
+    height: 160px;
+    margin: 10px;
+}
+.btn-play{
+    border: none;
+    border-radius: 30px;
+    background-color: green;
+    color: black;
+    font-weight:500;
+    padding: 6px;
+    padding-right: 26px;
+    padding-left: 26px;
+    margin-right: 10px;
 
-#mainCards {
-    height: 200px;
-    background: rgb(154,69,62);
-    background: linear-gradient(139deg, rgba(154,69,62,1) 0%, rgba(36,36,36,1) 23%);
+}
+.btn-salva{
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 30px;
+    background-color: black;
+    color: white;
+    font-weight:500;
+    padding: 6px;
+    padding-right: 26px;
+    padding-left: 26px;
+
 }
