@@ -8,7 +8,7 @@ body {
     align-items: center;
     margin: 5vh;
   }
-.card{
+.col{
   color: #fff;
     overflow: hidden;   
     position: relative;
