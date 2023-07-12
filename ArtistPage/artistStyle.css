@@ -9,6 +9,10 @@ body{
     color: white;
     
 }
+#arrow:hover{
+    cursor: pointer;
+    
+}
 
 #cover{
    margin-right: 15%;
