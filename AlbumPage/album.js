@@ -190,34 +190,63 @@ fetch(albumUrl + albumId)
       trackList += trackItem
     }
 
-    const navbar = `
-      <nav class="navbar navbar-light bg-dark fixed-bottom">
-        <div class="container-fluid d-flex justify-content-around">
-          <a class="nav-link" href="#">
-            <ion-icon name="home-outline"></ion-icon>
-            Home
-          </a>
-          <a class="nav-link" href="#">
-            <ion-icon name="search-outline"></ion-icon>
-            Cerca
-          </a>
-          <a class="nav-link" href="#">
-            <ion-icon name="library-outline"></ion-icon>
-            La tua libreria
-          </a>
-        </div>
-      </nav>
-    `
+    let currentTrack = null;
 
+for (let i = 0; i < album.tracks.data.length; i++) {
+  const track = album.tracks.data[i];
+  currentTrack = track;
+}
+  // Create current song bar
+  const currentSongBar = `
+  <!-- Current song bar -->
+  <div class="current-song-bar">
+    <div class="song-info">
+      <span class="song-title">${currentTrack.title}</span> 
+      <span class="separator"> by </span>
+      <span class="song-artist">${currentTrack.artist.name}</span>
+    </div>
+    <div class="playback-controls">
+      <button class="control-button" id="computer-button">
+        <i class="bi bi-display"></i>
+      </button>
+      <button class="control-button" id="heart-button">
+        <i class="bi bi-heart"></i>
+      </button>
+      <i class="bi bi-play control-icon" id="play-icon"></i>
+    </div>
+  </div>
+  `;
+// Create navbar
+const navbar = `
+<!-- nav bar -->
+<nav class="navbar navbar-light  fixed-bottom">
+  <div class="container-fluid d-flex justify-content-around">
+    <a class="nav-link" href="../Homepage/homepage.html">
+      <i class="bi bi-house"></i>
+      Home
+    </a>
+    <a class="nav-link" href="../Search/search.html">
+      <i class="bi bi-search"></i>
+      Cerca
+    </a>
+    <a class="nav-link" href="../ArtistPage/artist.html">
+      <i class="bi bi-bookshelf"></i>
+      La tua libreria
+    </a>
+  </div>
+</nav>
+`;
+    // Construct the updated HTML
     const updatedHTML = `
-      ${main}
-      ${commands}
-      <div class="container">
-        ${trackDetails}
-        ${trackList}
-      </div>
-      ${navbar}
-    `
+    ${main}
+    ${commands}
+    <div class="container">
+      ${trackDetails}
+      ${trackList}
+    </div>
+    ${currentSongBar}
+    ${navbar}
+  `;
 
     body.innerHTML = updatedHTML
 
@@ -227,7 +256,22 @@ fetch(albumUrl + albumId)
         row.addEventListener('click', function () {
           const selectedTrackNumber = row.dataset.trackNumber
           const trackTitle = row.querySelector('.track-title')
-
+    
+         
+          const trackIndex = selectedTrackNumber - 1;
+          const track = album.tracks.data[trackIndex];
+    
+  
+          const currentSongBar = document.querySelector('.current-song-bar');
+          const currentSongTitle = currentSongBar.querySelector('.song-title');
+          const currentSongArtist = currentSongBar.querySelector('.song-artist');
+    
+          currentSongTitle.textContent = track.title;
+          currentSongArtist.textContent = album.artist.name;
+    
+          // Show the current song bar
+          currentSongBar.style.display = 'flex';
+    
           if (row.classList.contains('selected')) {
             row.classList.remove('selected')
             trackTitle.classList.remove('text-success')
@@ -244,7 +288,7 @@ fetch(albumUrl + albumId)
               trackRow.querySelector('.text-secondary').textContent =
                 trackRow.dataset.trackNumber
             })
-
+    
             row.classList.add('selected')
             trackTitle.classList.remove('text-light')
             trackTitle.classList.add('text-success')
@@ -254,6 +298,7 @@ fetch(albumUrl + albumId)
         })
       })
     }
+    
     addClickEventToTrackRows()
     // Chiamata alla funzione per aggiungere gli eventi di click alle righe delle tracce
 

@@ -200,18 +200,25 @@ const arrow = document.getElementById('arrow')
         })
 
 
-        function addClickEventToTrackRows() {
+        function addClickEventToTrackRows(braniData) {
           const trackRows = document.querySelectorAll('.track-row');
-          trackRows.forEach(row => {
+          const currentSongBar = document.querySelector('.current-song-bar');
+          trackRows.forEach((row, i) => {
+            const el = braniData[i];
             row.addEventListener('click', function() {
               const selectedTrackNumber = row.dataset.trackNumber;
               const trackTitle = row.querySelector('.track-title');
+              const songTitleElement = document.querySelector('.song-title');
+              const songArtistElement = document.querySelector('.song-artist');
         
               if (row.classList.contains('selected')) {
                 row.classList.remove('selected');
                 trackTitle.classList.remove('text-success');
                 trackTitle.classList.add('text-light');
                 row.querySelector('.text-secondary').textContent = selectedTrackNumber;
+                songTitleElement.textContent = '';
+                songArtistElement.textContent = '';
+                currentSongBar.style.display = 'none';
               } else {
                 trackRows.forEach(trackRow => {
                   trackRow.classList.remove('selected');
@@ -224,6 +231,9 @@ const arrow = document.getElementById('arrow')
                 trackTitle.classList.remove('text-light');
                 trackTitle.classList.add('text-success');
                 row.querySelector('.text-secondary').innerHTML = '<i class="bi bi-play-fill text-success fs-3"></i>';
+                songTitleElement.textContent = el.title;
+                songArtistElement.textContent = el.artist.name;
+                currentSongBar.style.display = 'block';
               }
             });
           });

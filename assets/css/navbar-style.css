@@ -18,7 +18,7 @@
 } */
 /* Current song bar styles */
 .current-song-bar {
-  margin:15px;
+  margin: 15px;
   position: fixed;
   bottom: 50px;
   left: 0;
@@ -32,6 +32,12 @@
   padding: 0 16px;
 }
 
+.current-song-bar{
+  display:none;
+}
+.nav-link-white {
+  color: white;
+}
 .song-info {
   font-size: 14px;
 }
@@ -61,6 +67,8 @@
   overflow: hidden;
 }
 
+
+
 .scrolling-container {
   display: inline-block;
   white-space: nowrap;
@@ -74,4 +82,21 @@
   to {
     transform: translateX(-100%);
   }
+}
+@media (min-width: 768px) {
+  .current-song-bar,
+  nav.navbar {
+      display: none;
+  }
+  footer {
+      display: block;
+  }
+}
+
+
+footer {
+  background-color: black;
+  z-index: 9999;
+  position: fixed;
+  display: none; 
 }
