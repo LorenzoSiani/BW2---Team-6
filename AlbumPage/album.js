@@ -1,4 +1,4 @@
-const albumUrl = 'https://striveschool-api.herokuapp.com/api/deezer/album/165354302';
+const albumUrl = 'https://striveschool-api.herokuapp.com/api/deezer/album/328136527';
 const addressBarContent = new URLSearchParams(location.search);
 const albumId = addressBarContent.get('id');
 

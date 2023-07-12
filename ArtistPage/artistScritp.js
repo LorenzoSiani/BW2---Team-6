@@ -32,30 +32,18 @@ fetch(artistUrl + artistId
 <div>
   <p class="p-1 mx-0 text-left text-secondary" >${detail.nb_fan} Ascoltatori Mensili</p>
 </div>
-<div class="container">
-  <div class="row align-items-center justify-content-around">
-    <div class="col col-sm-6 d-flex align-items-center justify-content-center">
-      <button class"text-center"> Seguiti</button>
-      <i class="bi bi-three-dots-vertical text-secondary" style="font-size: 2em;"></i>
-      <div class="comands d-flex justify-content-between align-items-center">
-        <div class="d-flex justify-content-between w-25 fs-3 mx-4">
-          
+<div class="comands mt-3">
+        <div id="first-comands">
+        <button class"text-center "> Seguiti</button>
+        <i class="bi bi-three-dots text-white text-right"></i>
+        </div>
+        <div id="second-comands">
+          <i id="shuffle" class="bi bi-shuffle text-secondary"></i>
+          <i id="play-button" class="bi bi-play-circle-fill text-success mx-3"></i>
         </div>
       </div>
-    </div>
    
-    <div class="col col-sm-3">
-      <div class="d-flex justify-content-center align-items-center w-100 h-100">
-        <i id="shuffle" class="bi bi-shuffle text-secondary" style="font-size: 2em;"></i>
-      </div>
-    </div>
-    <div class="col col-sm-3">
-      <div class="d-flex justify-content-between align-items-center w-100 h-100">
-        <i id="play-button" class="bi bi-play-circle-fill text-success mx-3" style="font-size: 4em;"></i>
-      </div>
-    </div>
-  </div>
-</div>
+
 
 <div class="d-flex justify-content-start p-2">
   <div>
@@ -70,6 +58,9 @@ fetch(artistUrl + artistId
 <div id="tracklist-conteiner" class="d-flex flex-column">
 </div>
     `
+
+    
+
 // COLLEGAMENTO ARROW
 const arrow = document.getElementById('arrow');
 arrow.addEventListener('click', function(){
@@ -112,24 +103,41 @@ arrow.addEventListener('click', function(){
         
         brani.data.forEach((el,i) => {
             const divBrano = document.createElement('div')
+            divBrano.classList.add('container')
             divBrano.innerHTML=`
-            
-            <div class="d-flex my-3 align-items-center">
-              <div class="p-2 me-3">${i + 1}</div>
-              <div class="me-2"><img id="song-img" src="${el.album.cover}" alt="" /></div>
-              <div>
-                <h5>${el.title}</h5>
-                <p>${el.rank}</p>
-              </div>
-              <div>
-               <i class="bi bi-three-dots-vertical text-white"></i>
+            <div class="row mt-5 track-row" data-track-number="${i + 1}">
+            <div class="col-1 align-items-center mt-3 d-none d-lg-flex">
+              <p class="text-secondary fs-6 mb-0">${i + 1}</p>
+            </div>
+            <div class="col-8 col-lg-4 d-flex align-items-center mt-3">
+              <div class="d-flex align-items-center ">
+              <img id="song-img" src="${el.album.cover}" alt="" />
+              <div class="d-flex flex-column mx-5" >
+                <h5 class="track-title text-light">${el.title}</h5>
+                <p class="text-secondary fs-6 ">
+                ${el.rank}
+              </p>
+                </div>
               </div>
             </div>
+            <div class="col-3 col-lg-7 d-flex align-items-center justify-content-end">
+              <div class="d-flex align-items-center d-none d-lg-flex">
+                
+               
+              </div>
+              <div class="d-flex  align-items-center">
+                <i class="bi bi-three-dots-vertical text-secondary"></i>
+              </div>
+            </div>
+          </div>
+
+           
 
           
             `
             divTracks.appendChild(divBrano)
         });
+        
     })
   })
   .catch((err) => {
