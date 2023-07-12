@@ -1,7 +1,8 @@
 body {
     color: white;
     background-color: black;
-  }
+    background: linear-gradient( rgb(0, 0, 0)0%, rgb(7, 7, 7, 0.8) 30%);
+}
   
 #search-container {
     display: flex;
@@ -17,6 +18,12 @@ body {
     background-size: cover;
     margin: 5px;
 }
+a,.bi:hover{
+  
+  cursor: pointer;
+}
+
+.bi{scale: 1.5;}
 
 .image-container {
   
