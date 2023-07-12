@@ -32,6 +32,10 @@
   padding: 0 16px;
 }
 
+.current-song-bar{
+  display:none;
+}
+
 .song-info {
   font-size: 14px;
 }
