@@ -1,4 +1,4 @@
-const albumUrl = 'https://striveschool-api.herokuapp.com/api/deezer/album/';
+const albumUrl = 'https://striveschool-api.herokuapp.com/api/deezer/album/165354302';
 const addressBarContent = new URLSearchParams(location.search);
 const albumId = addressBarContent.get('id');
 
@@ -85,7 +85,7 @@ fetch(albumUrl + albumId)
           <div class="details">
             <div class="artist">
               <img id="artist-img" src="${album.artist.picture_small}" alt="" />
-              <a href="http://127.0.0.1:5500/ArtistPage/artist.html?id=${album.artist.id}">${album.artist.name}</a>
+              <a class=" text-light w-100" href="http://127.0.0.1:5500/ArtistPage/artist.html?id=${album.artist.id}">${album.artist.name}</a>
             </div>
             <div id="albumDetails" class="d-flex">
               <p >
@@ -154,7 +154,7 @@ fetch(albumUrl + albumId)
           <div class="col-8 col-lg-4 d-flex align-items-center mt-3">
             <div class="d-flex flex-column">
               <h5 class="track-title text-light">${track.title}</h5>
-              <p class="artist-name text-secondary fs-6 mb-0">${track.artist.name}</p>
+              <a class=" text-secondary" href="http://127.0.0.1:5500/ArtistPage/artist.html?id=${album.artist.id}">${album.artist.name}</a>
             </div>
           </div>
           <div class="col-3 col-lg-7 d-flex align-items-center justify-content-end">
@@ -206,6 +206,38 @@ fetch(albumUrl + albumId)
 
     body.innerHTML = updatedHTML;
 
+    function addClickEventToTrackRows() {
+      const trackRows = document.querySelectorAll('.track-row');
+      trackRows.forEach(row => {
+        row.addEventListener('click', function() {
+          const selectedTrackNumber = row.dataset.trackNumber;
+          const trackTitle = row.querySelector('.track-title');
+    
+          if (row.classList.contains('selected')) {
+            row.classList.remove('selected');
+            trackTitle.classList.remove('text-success');
+            trackTitle.classList.add('text-light');
+            row.querySelector('.text-secondary').textContent = selectedTrackNumber;
+          } else {
+            trackRows.forEach(trackRow => {
+              trackRow.classList.remove('selected');
+              trackRow.querySelector('.track-title').classList.remove('text-success');
+              trackRow.querySelector('.track-title').classList.add('text-light');
+              trackRow.querySelector('.text-secondary').textContent = trackRow.dataset.trackNumber;
+            });
+    
+            row.classList.add('selected');
+            trackTitle.classList.remove('text-light');
+            trackTitle.classList.add('text-success');
+            row.querySelector('.text-secondary').innerHTML = '<i class="bi bi-play-fill text-success fs-3"></i>';
+          }
+        });
+      });
+    }
+    addClickEventToTrackRows();
+    // Chiamata alla funzione per aggiungere gli eventi di click alle righe delle tracce
+   
+
     const heart = document.getElementById('heart');
     heart.addEventListener('click', function() {
       if (heart.classList.contains('bi-heart-fill')) {
@@ -222,6 +254,7 @@ fetch(albumUrl + albumId)
       if (play.classList.contains('bi-play-circle-fill')) {
         play.classList.remove('bi-play-circle-fill');
         play.classList.add('bi-pause-circle-fill');
+       
       } else {
         play.classList.remove('bi-pause-circle-fill');
         play.classList.add('bi-play-circle-fill');
@@ -239,42 +272,14 @@ fetch(albumUrl + albumId)
       }
     });
 
-    const artist = document.querySelector('.artist-name');
-    artist.addEventListener('click', function() {
-      window.location.href = '../ArtistPage/artist.html';
-    });
 
-    const trackRows = document.querySelectorAll('.track-row');
-    trackRows.forEach(row => {
-      row.addEventListener('click', function() {
-        const selectedTrackNumber = row.dataset.trackNumber;
-        const trackTitle = row.querySelector('.track-title');
-    
-        if (row.classList.contains('selected')) {
-          row.classList.remove('selected');
-          trackTitle.classList.remove('text-success');
-          trackTitle.classList.add('text-light');
-          row.querySelector('.text-secondary').textContent = selectedTrackNumber;
-        } else {
-          trackRows.forEach(trackRow => {
-            trackRow.classList.remove('selected');
-            trackRow.querySelector('.track-title').classList.remove('text-success');
-            trackRow.querySelector('.track-title').classList.add('text-light');
-            trackRow.querySelector('.text-secondary').textContent = trackRow.dataset.trackNumber;
-          });
-    
-          row.classList.add('selected');
-          trackTitle.classList.remove('text-light');
-          trackTitle.classList.add('text-success');
-          row.querySelector('.text-secondary').innerHTML = '<i class="bi bi-play-fill text-success fs-3"></i>';
-        }
-      });
-    });
+ 
+ 
     
 
     const arrow = document.getElementById('arrow');
     arrow.addEventListener('click', function() {
-      window.location.href = '../HomePage/homepage.html';
+      window.location.href = '../Search/search.html';
     });
 
     const coverImage = album.cover_medium;
