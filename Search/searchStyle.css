@@ -9,13 +9,37 @@ body {
     margin: 5vh;
   }
 .col{
-    background-image: url('/assets/imgs/search/image-6.jpg');
+  color: #fff;
+    overflow: hidden;   
+    position: relative;
     height: 14vh;
     max-width: 26vh;
     background-size: cover;
     margin: 5px;
 }
+
+.image-container {
   
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  transform: translate(35%, 4%) rotate(20deg);
+  width: 50%;
+  height: 71%;
+ 
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+.rotated-image {
+  max-width: 100%;
+  border-radius: inherit;
+  height: 100%;
+  object-fit: cover;
+ 
+ 
+}
+
 form.nosubmit {
    border: none;
    padding: 0;
