@@ -245,7 +245,7 @@ const arrow = document.getElementById('arrow')
             });
           });
         }
-        addClickEventToTrackRows();
+        addClickEventToTrackRows(brani.data);
     })
     const coverImage = detail.picture_xl
     generateAverageColor(coverImage)
