@@ -18,13 +18,22 @@ const homePageRend = function(){
             newDiv.classList.add('col')
             newDiv.innerHTML=`
             
-             <div class="Hcard card">
-              <img src="${detail.cover_medium}" class="card-img-top" alt="Immagine" />
-               <div class="card-body">
-                <a href="http://127.0.0.1:5500/AlbumPage/album.html?id=${detail.id}" class="btn btn-primary">${detail.title}</a>
-                <a href="http://127.0.0.1:5500/ArtistPage/artist.html?id=${detail.artist.id}" class="btn btn-primary">${detail.artist.name}</a>
-               </div>
+
+      <div class="card" id="mainCards">
+        <div class="card-body">
+          <div class="row">
+            <div class="col">
+            </div>
+            <div class="col">
+            <img src="${detail.cover_medium}" class="card-img-top" alt="Immagine" />
+              <div class="right-div">
+              <a href="http://127.0.0.1:5500/AlbumPage/album.html?id=${detail.id}" class="btn btn-success">${detail.title}</a>
+              <a href="http://127.0.0.1:5500/ArtistPage/artist.html?id=${detail.artist.id}" class="btn btn-success>${detail.artist.name}</a>
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
             
             `
             albumCont.appendChild(newDiv)
