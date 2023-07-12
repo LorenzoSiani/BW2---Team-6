@@ -72,20 +72,27 @@ fetch(artistUrl + artistId
 <div>
  
 </div>
+<<<<<<< Updated upstream
 <div class="comands mt-5">
         <div id="first-comands">
        <button  class="not-clicked ">Segui</button>
 
+=======
+
+<div class="container d-flex justify-content-between align-items-center "   
+<div class="comands mt-3">
+        <div id="first-comands">
+        <button >Seguiti</button>
+>>>>>>> Stashed changes
         <i class="bi bi-three-dots-vertical text-secondary d-inline-block d-lg-none"></i>
         <i class="bi bi-three-dots text-secondary d-none d-lg-inline-block"></i>
         </div>
-        <div id="second-comands">
+        <div id="second-comands"  >
           <i id="shuffle" class="bi bi-shuffle text-secondary"></i>
           <i id="play-button" class="bi bi-play-circle-fill text-success mx-3"></i>
         </div>
       </div>
-   
-
+</div>
 
 <div class="d-flex justify-content-start p-2 mx-5">
   <div>
