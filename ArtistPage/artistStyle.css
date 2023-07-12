@@ -5,7 +5,7 @@ body{
 
 #arrow{ 
     margin-top: 10px;
-    font-size: 2.5em;
+    font-size: 3em;
     color: white;
     
 }
@@ -19,9 +19,12 @@ body{
     border-radius: 40px;
     margin-right: 5px;
 }
-
+#shuffle{
+    font-size: 2em ;
+  
+}
 #play-button{
-    font-size: 1.8em; 
+    font-size: 2.5em; 
 }
 button{
   
