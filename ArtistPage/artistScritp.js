@@ -58,11 +58,6 @@ fetch(artistUrl //+ artistId//
     <div id="tracklist-conteiner" class="d-flex flex-column">
     </div>
     `
-// COLLEGAMENTO ARROW
-const arrow = document.getElementById('arrow');
-arrow.addEventListener('click', function(){
-  window.location.href = '../HomePage/homepage.html';
-});
 
     const play = document.getElementById('play-button');
     play.addEventListener('click', function () {
