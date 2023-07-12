@@ -30,6 +30,22 @@ button{
     color: white;
     
     padding: 6px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.not-clicked{
+    
+    border: 5px inset rgba(0,0,0,0.83);
+}
+
+.clicked{
+    border: 5px outset rgba(0,0,0,0.83);
+    
+}
+
+.container h5:hover{
+    cursor: pointer;
 }
 
 @media  screen  and (max-width:1200px){
@@ -38,6 +54,20 @@ button{
         display: flex;
         justify-content: space-between;
       }
+
+      .detailName{
+        position: absolute;
+        bottom: 30px;
+        
+        font-size: 2.2em;
+    }
+
+    #ascoltatori{
+        position: absolute;
+        bottom: -60px;
+        
+        
+    }
     
   #background-img{
       height: 300px;
@@ -77,8 +107,23 @@ button{
       background-size: 100%;  
     background-repeat: no-repeat;
   }
-    #detailName{
-        font-size: 3em;
+    .detailName{
+        position: absolute;
+        bottom: 30px;
+        
+        font-size: 2.2em;
+    }
+
+    #ascoltatori{
+        position: absolute;
+        bottom: -10px;
+        
+        
+    }
+
+    #arrow:hover{
+        cursor: pointer;
+        
     }
     .comands{
         display: flex;
