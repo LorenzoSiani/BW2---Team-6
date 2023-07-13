@@ -1,11 +1,15 @@
 body {
     color: white;
     background-color: black;
-  }
-  main{
-   width: 60%;
-  }
-  p{
+}
+aside{
+    width: 250px;
+}
+header{
+    width: 260px;
+}
+
+p{
     margin: 3px;
   }
 li{
