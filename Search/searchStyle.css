@@ -107,11 +107,11 @@ input[type="search"]::placeholder {
 
   /* BORDELLO ICONA SEARCH */
   .sbx-custom {
-    color: #222222;
+    color: black;
     display: inline-block;
     position: relative;
     width: 200px;
-    height: 25px;
+    height: 36px;
     white-space: nowrap;
     box-sizing: border-box;
     font-size: 12px;
@@ -128,7 +128,7 @@ input[type="search"]::placeholder {
     border: 0;
     border-radius: 13px;
     box-shadow: inset 0 0 0 0px #FFFFFF;
-    background: #303030;
+    background: #FFFFFF;
     padding: 0;
     padding-right: 20px;
     padding-left: 25px;
@@ -196,7 +196,7 @@ input[type="search"]::placeholder {
     width: 17px;
     height: 17px;
     vertical-align: middle;
-    fill: #222222;
+    fill: #F5F5F5;
   }
   
   .sbx-custom__reset {
