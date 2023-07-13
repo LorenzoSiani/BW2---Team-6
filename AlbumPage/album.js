@@ -247,8 +247,8 @@ const navbar = `
     ${currentSongBar}
     ${navbar}
   `;
-
-    body.innerHTML = updatedHTML
+const mainContainer = document.getElementById('main-container')
+    mainContainer.innerHTML = updatedHTML
 
     function addClickEventToTrackRows() {
       const trackRows = document.querySelectorAll('.track-row')

@@ -216,3 +216,29 @@ body{
 
 }
 
+
+/*header e aside*/
+#artist-img{
+    width: 30px;
+    height: 30px;
+    border-radius: 40px;
+    margin-right: 5px;
+}
+aside{
+    width: 250px;
+    background-color: black;
+}
+header{
+    width: 260px;
+    background-color: black;
+}
+li{
+    list-style: none;
+}
+ul{
+    padding: 0;
+}
+a, a:hover, a:focus, a:active {
+    text-decoration: none;
+    color: inherit;
+}
