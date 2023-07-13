@@ -19,16 +19,79 @@
   </head>
   <body>
     <h1 class="text-left mx-2 mt-3 --bs-light-bg-subtle">Cerca</h1>
-    <div class="mb-3">
-      <form action="" id="search-container">
-        <div><i class="bi bi-search text-white"></i></div>
-        <input type="search" placeholder="Cosa vuoi cercare?" />
+
+    <div class="search-box mb-3 mx-5">
+      <svg xmlns="http://www.w3.org/2000/svg" style="display: none">
+        <symbol
+          xmlns="http://www.w3.org/2000/svg"
+          id="sbx-icon-search-9"
+          viewBox="0 0 40 41"
+        >
+          <path
+            d="M25.25 32.2c-2.417 1.307-5.184 2.05-8.126 2.05C7.667 34.25 0 26.58 0 17.123 0 7.667 7.667 0 17.124 0 26.582 0 34.25 7.667 34.25 17.124c0 3.277-.92 6.338-2.517 8.94.29.18.563.397.814.65l6.105 6.103c1.8 1.8 1.795 4.722 0 6.52-1.8 1.8-4.72 1.798-6.52 0l-6.104-6.105c-.314-.313-.572-.66-.777-1.03zm-8.126-4.116c6.053 0 10.96-4.907 10.96-10.96 0-6.052-4.907-10.96-10.96-10.96-6.052 0-10.96 4.908-10.96 10.96 0 6.053 4.908 10.96 10.96 10.96z"
+            fill-rule="evenodd"
+          />
+        </symbol>
+        <symbol
+          xmlns="http://www.w3.org/2000/svg"
+          id="sbx-icon-clear-4"
+          viewBox="0 0 20 20"
+        >
+          <path
+            d="M11.664 9.877l4.485 4.485-1.542 1.54-4.485-4.485-4.485 4.485-1.54-1.54 4.485-4.485-4.485-4.485 1.54-1.54 4.485 4.484 4.485-4.485 1.54 1.542-4.484 4.485zM10 20c5.523 0 10-4.477 10-10S15.523 0 10 0 0 4.477 0 10s4.477 10 10 10z"
+            fill-rule="evenodd"
+          />
+        </symbol>
+      </svg>
+
+      <form
+        novalidate="novalidate"
+        onsubmit="return false;"
+        class="searchbox sbx-custom"
+      >
+        <div role="search" class="sbx-spotify__wrapper">
+          <input
+            type="search"
+            name="search"
+            placeholder="     Cosa vuoi cercare?"
+            autocomplete="off"
+            required="required"
+            class="sbx-custom__input"
+          />
+          <button
+            type="submit"
+            title="Submit your search query."
+            class="sbx-custom__submit"
+          >
+            <svg role="img" aria-label="Search">
+              <use xlink:href="#sbx-icon-search-9"></use>
+            </svg>
+          </button>
+          <button
+            type="reset"
+            title="Clear the search query."
+            class="sbx-custom__reset"
+          >
+            <svg role="img" aria-label="Reset">
+              <use xlink:href="#sbx-icon-clear-4"></use>
+            </svg>
+          </button>
+        </div>
       </form>
+
+      <script type="text/javascript">
+        document
+          .querySelector('.searchbox [type="reset"]')
+          .addEventListener("click", function () {
+            this.parentNode.querySelector("input").focus()
+          })
+      </script>
     </div>
+
     <h3 class="text-center my-3">Sfoglia tutto</h3>
 
     <div id="cards-cont" class="container">
-      <div class="row row-cols-1 row-cols-md-2 justify-content-around mx-2">
+      <div class="row row-cols-2 justify-content-around mx-2">
         <div class="col col-half card mb-3">
           <h5 class="mt-1">Podcast</h5>
           <div class="image-container">
