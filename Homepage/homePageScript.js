@@ -29,7 +29,7 @@ const homePageRend = function(){
             <img src="${detail.cover_medium}"  alt="Immagine" width="150px"/>
               <div class="right-div">
               <a href="http://127.0.0.1:5500/AlbumPage/album.html?id=${detail.id}" class="text-light">${detail.title}</a>
-              <a href="http://127.0.0.1:5500/ArtistPage/artist.html?id=${detail.artist.id}" class="btn btn-success>${detail.artist.name}</a>
+              <a href="http://127.0.0.1:5500/ArtistPage/artist.html?id=${detail.artist.id}" class="text-light">${detail.artist.name}</a>
               </div>
             </div>
           </div>
@@ -70,8 +70,8 @@ const homePageRend2 = function(){
           <div class="col">
           <img src="${detail.cover_medium}" class="card-img-top" alt="Immagine" />
             <div class="right-div">
-            <a href="http://127.0.0.1:5500/AlbumPage/album.html?id=${detail.id}" class="btn btn-success">${detail.title}</a>
-            <a href="http://127.0.0.1:5500/ArtistPage/artist.html?id=${detail.artist.id}" class="btn btn-success>${detail.artist.name}</a>
+            <a href="http://127.0.0.1:5500/AlbumPage/album.html?id=${detail.id}" class="text-light">${detail.title}</a>
+            <a href="http://127.0.0.1:5500/ArtistPage/artist.html?id=${detail.artist.id}" class="text-light">${detail.artist.name}</a>
             </div>
           </div>
         </div>
