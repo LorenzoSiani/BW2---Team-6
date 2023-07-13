@@ -3,10 +3,10 @@ body {
     background-color: black;
 }
 aside{
-    width: 250px;
+    min-width: 180px;
 }
 header{
-    width: 260px;
+    min-width: 200px;
 }
 
 p{
@@ -18,14 +18,19 @@ li{
 ul{
     padding: 0;
 }
+.top-section{
+    background-color: black;
+}
 #artist-img{
     width: 30px;
     height: 30px;
     border-radius: 40px;
     margin-right: 5px;
 }
-.Hcard{
-    width: 200px;
+.img-card{
+    min-width: 100px;
+    max-width: 220px;
+    background-color: rgb(46, 46, 46);
 }
 .img-sect-2{
     height: 60px;
@@ -33,6 +38,10 @@ ul{
 .six-cards{
     background-color: rgb(59, 59, 59);
     padding: 0;
+    border-radius: 10px;
+}
+.six-cards img{
+    border-radius: 10px 0 0 10px;
 }
 a, a:hover, a:focus, a:active {
     text-decoration: none;
