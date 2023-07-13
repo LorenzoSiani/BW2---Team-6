@@ -251,55 +251,57 @@ const mainContainer = document.getElementById('main-container')
     mainContainer.innerHTML = updatedHTML
 
     function addClickEventToTrackRows() {
-      const trackRows = document.querySelectorAll('.track-row')
+      const trackRows = document.querySelectorAll(".track-row");
       trackRows.forEach((row) => {
-        row.addEventListener('click', function () {
-          const selectedTrackNumber = row.dataset.trackNumber
-          const trackTitle = row.querySelector('.track-title')
+        row.addEventListener("click", function () {
+          const selectedTrackNumber = row.dataset.trackNumber;
+          const trackTitle = row.querySelector(".track-title");
     
-         
           const trackIndex = selectedTrackNumber - 1;
           const track = album.tracks.data[trackIndex];
     
-  
-          const currentSongBar = document.querySelector('.current-song-bar');
-          const currentSongTitle = currentSongBar.querySelector('.song-title');
-          const currentSongArtist = currentSongBar.querySelector('.song-artist');
+          const currentSongBar = document.querySelector(".current-song-bar");
+          const currentSongTitle = currentSongBar.querySelector(".song-title");
+          const currentSongArtist = currentSongBar.querySelector(".song-artist");
     
           currentSongTitle.textContent = track.title;
           currentSongArtist.textContent = album.artist.name;
     
-          // Show the current song bar
-          currentSongBar.style.display = 'flex';
+          // Show the current song bar on smaller screens
+          if (window.matchMedia("(max-width: 767px)").matches) {
+            currentSongBar.style.display = "flex";
+          } else {
+            // Hide the current song bar on larger screens
+            currentSongBar.style.display = "none";
+          }
     
-          if (row.classList.contains('selected')) {
-            row.classList.remove('selected')
-            trackTitle.classList.remove('text-success')
-            trackTitle.classList.add('text-light')
-            row.querySelector('.text-secondary').textContent =
-              selectedTrackNumber
+          if (row.classList.contains("selected")) {
+            row.classList.remove("selected");
+            trackTitle.classList.remove("text-success");
+            trackTitle.classList.add("text-light");
+            row.querySelector(".text-secondary").textContent = selectedTrackNumber;
           } else {
             trackRows.forEach((trackRow) => {
-              trackRow.classList.remove('selected')
+              trackRow.classList.remove("selected");
               trackRow
-                .querySelector('.track-title')
-                .classList.remove('text-success')
-              trackRow.querySelector('.track-title').classList.add('text-light')
-              trackRow.querySelector('.text-secondary').textContent =
-                trackRow.dataset.trackNumber
-            })
+                .querySelector(".track-title")
+                .classList.remove("text-success");
+              trackRow.querySelector(".track-title").classList.add("text-light");
+              trackRow.querySelector(".text-secondary").textContent =
+                trackRow.dataset.trackNumber;
+            });
     
-            row.classList.add('selected')
-            trackTitle.classList.remove('text-light')
-            trackTitle.classList.add('text-success')
-            row.querySelector('.text-secondary').innerHTML =
-              '<i class="bi bi-play-fill text-success fs-3"></i>'
+            row.classList.add("selected");
+            trackTitle.classList.remove("text-light");
+            trackTitle.classList.add("text-success");
+            row.querySelector(".text-secondary").innerHTML =
+              '<i class="bi bi-play-fill text-success fs-3"></i>';
           }
-        })
-      })
+        });
+      });
     }
     
-    addClickEventToTrackRows()
+    addClickEventToTrackRows();
     // Chiamata alla funzione per aggiungere gli eventi di click alle righe delle tracce
 
     const heart = document.getElementById('heart')
