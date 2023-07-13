@@ -66,7 +66,7 @@ a, a:hover, a:focus, a:active {
     padding-left: 26px;
 
 }
-#mainCards {
+.mainCards {
    
     
     background: rgb(175, 145, 144);
@@ -75,4 +75,9 @@ a, a:hover, a:focus, a:active {
     
     
 }
-
+.mainCards2{
+    background: rgb(175, 145, 144);
+    background: linear-gradient(151deg, rgba(152,69,64,1) 0%, rgba(36,36,36,1) 18%);
+    margin: 20px;
+    
+}
