@@ -17,16 +17,7 @@
   margin-bottom: 4px;
 } */
 
-@media (min-width: 768px) {
-  .current-song-bar,
-  .current-song-bar.show,
-  nav.navbar {
-    display: none;
-  }
-  footer {
-    display: block;
-  }
-}
+
 /* Current song bar styles */
 .current-song-bar {
   margin: 15px;
@@ -49,7 +40,16 @@
 .current-song-bar.show {
   display: flex;
 }
-
+@media (min-width: 768px) {
+  .current-song-bar,
+  .current-song-bar.show,
+  nav.navbar {
+    display: none;
+  }
+  footer {
+    display: block;
+  }
+}
 .nav-link-white {
   color: white;
 }
