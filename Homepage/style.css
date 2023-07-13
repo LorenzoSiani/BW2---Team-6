@@ -81,3 +81,12 @@ a, a:hover, a:focus, a:active {
     margin: 20px;
     
 }
+
+
+#dot{
+    font-size: 3em;
+    z-index: 1;
+
+    bottom: 0;
+    left: -8px;
+}

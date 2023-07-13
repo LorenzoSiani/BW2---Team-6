@@ -86,7 +86,7 @@ fetch(albumUrl + albumId)
         <img id="cover" class= "d-none d-xl-block" src="${
           album.cover_xl
         }" alt="" />
-        <img id="cover" class= "d-flex d-lg-none" src="${
+        <img id="cover" class= "d-flex d-xl-none" src="${
           album.cover_medium
         }" alt="" />
         <div class="title">
