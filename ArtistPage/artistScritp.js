@@ -72,20 +72,20 @@ fetch(artistUrl + artistId
 <div>
  
 </div>
-
-<div class="container d-flex justify-content-between align-items-center "   
-<div class="comands mt-3">
+<div class="comands mt-5">
         <div id="first-comands">
-        <button >Seguiti</button>
+       <button  class="not-clicked ">Segui</button>
+
         <i class="bi bi-three-dots-vertical text-secondary d-inline-block d-lg-none"></i>
         <i class="bi bi-three-dots text-secondary d-none d-lg-inline-block"></i>
         </div>
-        <div id="second-comands"  >
+        <div id="second-comands">
           <i id="shuffle" class="bi bi-shuffle text-secondary"></i>
           <i id="play-button" class="bi bi-play-circle-fill text-success mx-3"></i>
         </div>
       </div>
-</div>
+   
+
 
 <div class="d-flex justify-content-start p-2 mx-5">
   <div>
@@ -200,25 +200,18 @@ const arrow = document.getElementById('arrow')
         })
 
 
-        function addClickEventToTrackRows(braniData) {
+        function addClickEventToTrackRows() {
           const trackRows = document.querySelectorAll('.track-row');
-          const currentSongBar = document.querySelector('.current-song-bar');
-          trackRows.forEach((row, i) => {
-            const el = braniData[i];
+          trackRows.forEach(row => {
             row.addEventListener('click', function() {
               const selectedTrackNumber = row.dataset.trackNumber;
               const trackTitle = row.querySelector('.track-title');
-              const songTitleElement = document.querySelector('.song-title');
-              const songArtistElement = document.querySelector('.song-artist');
         
               if (row.classList.contains('selected')) {
                 row.classList.remove('selected');
                 trackTitle.classList.remove('text-success');
                 trackTitle.classList.add('text-light');
                 row.querySelector('.text-secondary').textContent = selectedTrackNumber;
-                songTitleElement.textContent = '';
-                songArtistElement.textContent = '';
-                currentSongBar.style.display = 'none';
               } else {
                 trackRows.forEach(trackRow => {
                   trackRow.classList.remove('selected');
@@ -231,14 +224,11 @@ const arrow = document.getElementById('arrow')
                 trackTitle.classList.remove('text-light');
                 trackTitle.classList.add('text-success');
                 row.querySelector('.text-secondary').innerHTML = '<i class="bi bi-play-fill text-success fs-3"></i>';
-                songTitleElement.textContent = el.title;
-                songArtistElement.textContent = el.artist.name;
-                currentSongBar.style.display = 'block';
               }
             });
           });
         }
-        addClickEventToTrackRows(brani.data);
+        addClickEventToTrackRows();
     })
     const coverImage = detail.picture_xl
     generateAverageColor(coverImage)
