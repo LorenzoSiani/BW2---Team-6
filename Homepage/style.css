@@ -79,7 +79,6 @@ a, a:hover, a:focus, a:active {
    
     
     background: rgb(175, 145, 144);
-    background: linear-gradient(151deg, rgba(152,69,64,1) 0%, rgba(36,36,36,1) 18%);
     margin: 20px;
     
     
@@ -89,4 +88,11 @@ a, a:hover, a:focus, a:active {
     background: linear-gradient(151deg, rgba(152,69,64,1) 0%, rgba(36,36,36,1) 18%);
     margin: 20px;
     
+}
+#dot{
+    font-size: 3em;
+    z-index: 1;
+
+    bottom: 0;
+    left: -8px;
 }

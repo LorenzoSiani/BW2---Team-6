@@ -45,6 +45,43 @@ const homePageRend2 = function(){
           }
       })
       .then((detail)=>{
+        function generateAverageColor(imageUrl) {
+          return new Promise((resolve, reject) => {
+            const img = new Image()
+            img.crossOrigin = 'Anonymous'
+            img.src = imageUrl
+            img.addEventListener('load', () => {
+              const canvas = document.createElement('canvas')
+              canvas.width = img.width
+              canvas.height = img.height
+              const context = canvas.getContext('2d')
+              context.drawImage(img, 0, 0)
+              const imageData = context.getImageData(
+                0,
+                0,
+                img.width,
+                img.height
+              ).data
+              let totalRed = 0
+              let totalGreen = 0
+              let totalBlue = 0
+    
+              for (let i = 0; i < imageData.length; i += 4) {
+                totalRed += imageData[i]
+                totalGreen += imageData[i + 1]
+                totalBlue += imageData[i + 2]
+              }
+    
+              const pixelCount = imageData.length / 4
+              const averageRed = Math.floor(totalRed / pixelCount)
+              const averageGreen = Math.floor(totalGreen / pixelCount)
+              const averageBlue = Math.floor(totalBlue / pixelCount)
+              const averageColor = `rgb(${averageRed},${averageGreen},${averageBlue})`
+              resolve(averageColor)
+            })
+            img.addEventListener('error', reject)
+          })
+        }
           console.log(detail.tracks.data.length)
           let newDiv = document.createElement('div')
           newDiv.classList.add('col')
@@ -62,15 +99,29 @@ const homePageRend2 = function(){
             </div>
           </div>
           <div class="text-light d-flex mt-2 align-items-center justify-content-between">
-            <div><i class="bi bi-heart fs-3 p-2"></i><i class="bi bi-three-dots-vertical fs-3 p-2"></i></div><div class="d-flex align-items-center"><p>${detail.tracks.data.length}brani</p><i class="bi bi-play-circle fs-3 p-2"></i></div>
+            <div><i  class="bi bi-heart fs-3 p-2"></i><i class="bi bi-three-dots-vertical fs-3 p-2"></i></div><div class="d-flex align-items-center"><p>${detail.tracks.data.length}brani</p><i class="bi bi-play-circle fs-3 p-2"></i></div>
           </div>
         </div>
       </div>
     </div>
           
           `
+
+          
           //console.log(detail.tracks.data);
-          albumCont2.appendChild(newDiv)
+          albumCont2.appendChild(newDiv);
+          const cards = document.querySelectorAll('.mainCards');
+          const coverImage = detail.cover_medium;
+          
+          generateAverageColor(coverImage).then((color) => {
+            cards.forEach((card) => {
+              card.style.background = `linear-gradient to bottom right, ${color} 0%, #000000 30%)`;
+              card.style.backgroundRepeat = 'no-repeat'; 
+              card.style.backgroundSize = 'cover'; 
+            });
+          });
+          
+ 
       })
       .catch(err=>{
           console.log(err);
