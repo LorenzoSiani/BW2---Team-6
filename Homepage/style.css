@@ -64,7 +64,11 @@ a, a:hover, a:focus, a:active {
 }
 #mainCards {
    
-    background: rgb(154,69,62);
-    background: linear-gradient(139deg, rgba(154,69,62,1) 0%, rgba(36,36,36,1) 23%);
+    
+    background: rgb(175, 145, 144);
+    background: linear-gradient(151deg, rgba(152,69,64,1) 0%, rgba(36,36,36,1) 18%);
+    margin: 20px;
+    
+    
 }
 
