@@ -196,3 +196,23 @@ body {
       }
   }
   
+/*header e aside*/
+
+aside{
+    width: 250px;
+    background-color: black;
+}
+.desktopNav{
+    width: 260px;
+    background-color: black;
+}
+li{
+    list-style: none;
+}
+ul{
+    padding: 0;
+}
+a, a:hover, a:focus, a:active {
+    text-decoration: none;
+    color: inherit;
+}
