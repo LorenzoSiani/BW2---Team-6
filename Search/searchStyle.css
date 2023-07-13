@@ -21,31 +21,23 @@ body {
   }
 
   /* SEZIONE CARD SEARCH */
-  @media (max-width: 380px) {
-    .col{
-      position: relative;
-      height: 7vh;
-      max-width: 13vh;
-    }
-    .image-container {
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      transform: translate(35%, 4%) rotate(20deg);
-      width: 25%;
-      height: 35%;
-      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-    }
-    
-  }
 
+  @media (max-width: 400px) {
+    .row-cols-2 {
+      flex-wrap: wrap;
+      margin: 0 -5px;
+    }
+    .col {
+      flex: 0 0 calc(50% - 10px);
+      max-width: calc(50% - 10px);
+    }
+  }
 .col{
   color: #fff;
     overflow: hidden;   
     position: relative;
     height: 14vh;
     max-width: 26vh;
-    
     background-size: cover;
     margin: 5px;
    
