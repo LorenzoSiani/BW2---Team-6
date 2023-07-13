@@ -70,8 +70,8 @@ const homePageRend2 = function(){
             <a href="http://127.0.0.1:5500/ArtistPage/artist.html?id=${detail.artist.id}" class="text-light">${detail.artist.name}</a>
             </div>
           </div>
-          <div class="text-light d-flex mt-2">
-            <div><i class="bi bi-heart"></i><i class="bi bi-three-dots-vertical"></i><div/><div><p>${detail.tracks.data.length}brani</p><i class="bi bi-play-circle"></i></div>
+          <div class="text-light d-flex mt-2 align-items-center justify-content-between">
+            <div><i class="bi bi-heart fs-3 p-2"></i><i class="bi bi-three-dots-vertical fs-3 p-2"></i></div><div class="d-flex align-items-center"><p>${detail.tracks.data.length} brani</p><i class="bi bi-play-circle fs-3 p-2"></i></div>
           </div>
         </div>
       </div>

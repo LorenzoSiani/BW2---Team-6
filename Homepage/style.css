@@ -3,10 +3,10 @@ body {
     background-color: black;
 }
 aside{
-    width: 250px;
+    min-width: 280px;
 }
 header{
-    width: 260px;
+    min-width: 370px;
 }
 
 p{
@@ -19,8 +19,8 @@ ul{
     padding: 0;
 }
 #artist-img{
-    width: 30px;
-    height: 30px;
+    width: 50px;
+    height: 50px;
     border-radius: 40px;
     margin-right: 5px;
 }
@@ -81,3 +81,9 @@ a, a:hover, a:focus, a:active {
     margin: 20px;
     
 }
+
+.img-top {
+    max-width: 250px;
+    max-height: 250px;
+}
+
