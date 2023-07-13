@@ -83,7 +83,7 @@
     transform: translateX(-100%);
   }
 }
-@media (min-width: 768px) {
+ @media (min-width: 768px) {
   .current-song-bar,
   nav.navbar {
       display: none;
@@ -98,5 +98,5 @@ footer {
   background-color: black;
   z-index: 9999;
   position: fixed;
-  display: none; 
-}
+  /* display: none;   */
+} 
