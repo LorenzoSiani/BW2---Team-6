@@ -3,10 +3,10 @@ body {
     background-color: black;
 }
 aside{
-    min-width: 280px;
+    min-width: 180px;
 }
 header{
-    min-width: 370px;
+    min-width: 220px;
 }
 
 p{
