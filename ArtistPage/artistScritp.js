@@ -1,7 +1,7 @@
 const artistUrl = 'https://striveschool-api.herokuapp.com/api/deezer/artist/';
 const addressCont = new URLSearchParams(location.search);
 const artistId = addressCont.get('id');
-const body = document.querySelector('body')
+const body = document.querySelector('#conteiner-artist')
 console.log(artistId)
 fetch(artistUrl + artistId
 )
@@ -58,7 +58,7 @@ fetch(artistUrl + artistId
       })
     }
     console.log('DETAIL', detail)
-    console.log(detail.tracklist)
+    console.log(detail)
     const divArtist = document.getElementById('conteiner-artist')
     divArtist.innerHTML = `
   
