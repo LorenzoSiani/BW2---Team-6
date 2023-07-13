@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <div class="container-fluid d-none d-lg-flex flex-grow">
+    <div class="container-fluid d-none d-lg-flex">
       <header class="position-relative">
         <div class="position-fixed">
           <nav>
@@ -71,7 +71,29 @@
         </div>
       </header>
       <main class="bg-dark">
-        <section class="d-flex top-section flex-grow m-4">
+        <div class="dropdown d-none d-xl-flex">
+          <a
+            class="btn dropdown-toggle text-light"
+            href="#"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Epicode
+          </a>
+          <ul class="dropdown-menu bg-dark">
+            <li><a class="dropdown-item text-light" href="#">Action</a></li>
+            <li>
+              <a class="dropdown-item text-light" href="#">Another action</a>
+            </li>
+            <li>
+              <a class="dropdown-item text-light" href="#"
+                >Something else here</a
+              >
+            </li>
+          </ul>
+        </div>
+        <section class="d-flex top-section flex-grow m-4 mt-5">
           <img id="img-top" src="/assets/imgs/main/image-15.jpg" alt="" />
 
           <div class="ms-3 my-2">

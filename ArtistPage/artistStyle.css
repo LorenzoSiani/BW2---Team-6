@@ -2,25 +2,33 @@ body {
     color: white;
     background-color: black;
   }
-  
+aside{
+    min-width: 180px;
+}
+header{
+    min-width: 200px;
+}
 
-  
   #arrow {
     margin-top: 10px;
     font-size: 2.5em;
     color: white;
   }
-  
-  #cover {
-    margin-right: 15%;
-  }
-  
+#conteiner-artist{
+  flex-grow: 1;
+  max-width: 1000px;
+}
   #artist-img {
     width: 50%;
     border-radius: 40px;
     margin-right: 5px;
   }
-  
+  .side-img{
+    width: 30px;
+    height: 30px;
+    border-radius: 40px;
+    margin-right: 5px;
+}
   #play-button {
     font-size: 1.8em;
   }
@@ -108,9 +116,12 @@ body {
   
   @media screen and (min-width: 1200px) {
     #background-img {
-      width: 100%;
-      height: 700px;
+      max-width: 1200px;
+      min-width: 600;
+      max-height: 900px;
+      min-height: 340px;
       background-repeat: no-repeat;
+      background-position: center;
       
       
     }
@@ -156,56 +167,14 @@ body {
     #shuffle {
       display: none;
     }
-    .sidebar {
-        z-index: 1;
-        position: fixed;
-        top: 0;
-        right: 0;
-        width: 285px;
-        height: 100vh;
-        background-color: #000000;
-        padding: 20px;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: flex-start;
-      }
-
-      .dekstopNav {
-        z-index: 1;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 245px;
-        height: 100vh;
-        background-color: #000000;
-        padding: 20px;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: flex-start;
-      }
       .user{
         width: 20%;
         height: 70%;
         border-radius: 80px;
         margin-right: 20px;
       }
-      #conteiner-artist{
-        margin-left:16%;
-      }
   }
   
-/*header e aside*/
-
-aside{
-    width: 250px;
-    background-color: black;
-}
-.desktopNav{
-    width: 260px;
-    background-color: black;
-}
 li{
     list-style: none;
 }
