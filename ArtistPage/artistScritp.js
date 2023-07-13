@@ -61,6 +61,7 @@ fetch(artistUrl + artistId
     console.log(detail.tracklist)
     const divArtist = document.getElementById('conteiner-artist')
     divArtist.innerHTML = `
+  
     <div class="position-relative">  
     <div id="background-img" style="background-image: url('${detail.picture_xl}'); ">
       <h3 class="detailName mx-3">${detail.name}</h3>

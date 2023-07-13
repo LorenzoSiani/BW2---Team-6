@@ -1,159 +1,198 @@
-body{
+body {
     color: white;
     background-color: black;
-}
+  }
+  
 
-#arrow{ 
+  
+  #arrow {
     margin-top: 10px;
     font-size: 2.5em;
     color: white;
-    
-}
-
-#cover{
-   margin-right: 15%;
-}
-
-#artist-img{
+  }
+  
+  #cover {
+    margin-right: 15%;
+  }
+  
+  #artist-img {
     width: 50%;
     border-radius: 40px;
     margin-right: 5px;
-}
-
-#play-button{
-    font-size: 1.8em; 
-}
-button{
+  }
   
+  #play-button {
+    font-size: 1.8em;
+  }
+  
+  button {
     border-style: none;
     background-color: black;
     color: white;
-    
     padding: 6px;
     padding-left: 30px;
     padding-right: 30px;
-}
-
-.not-clicked{
-    background-color: transparent;
-    border: 5px outset rgba(0,0,0,0.83);
-}
-
-.clicked{
-   
-    border: 5px inset rgba(0,0,0,0.83);
-    background-color: transparent;
-}
-
-.container h5:hover{
-    cursor: pointer;
-    
-}
-
-@media  screen  and (max-width:1200px){
-    .comands {
-        margin-left: 20px;
-        display: flex;
-        justify-content: space-between;
-      }
-
-      .detailName{
-        position: absolute;
-        bottom: 30px;
-        
-        font-size: 2.2em;
-    }
-
-    #ascoltatori{
-        position: absolute;
-        bottom: -60px;
-        
-        
-    }
-    
-  #background-img{
-      height: 300px;
-      background-size: cover;
   }
   
-  #tracklist-conteiner{
+  .not-clicked {
+    background-color: transparent;
+    border: 2px outset #ffffff;
+  }
+  
+  .clicked {
+    border: 2px inset #ffffff;
+    background-color: transparent;
+  }
+  
+  .container h5:hover {
+    cursor: pointer;
+  }
+  
+  @media screen and (max-width: 1200px) {
+    .comands {
+      margin-left: 20px;
+      display: flex;
+      justify-content: space-between;
+    }
+    
+    
+    .sidebar{
+        display: none;
+    }
+    .sidebar2{
+        display: none;
+    }
+    .detailName {
+      position: absolute;
+      bottom: 30px;
+      font-size: 2.2em;
+    }
+  
+
+    #ascoltatori {
+      position: absolute;
+      bottom: -60px;
+    }
+  
+    #background-img {
+      
+      height: 300px;
+      background-size: cover;
+    }
+  
+    #tracklist-conteiner {
       margin-left: 5%;
       margin-right: 5%;
-    
-      }
-      
-      #first-comands {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          margin-left: 30px;
-          width: 20%;
-          font-size: 1.7em;
-      }
-      
-      #second-comands{
-          display: flex;
-          align-items: center;
-          font-size: 1.7em;
-          margin-right: 5%;
-      }
-      #play-button{
-          font-size: 2.1em;
-      }
-}
-
-@media  screen and (min-width: 1200px ) {
-      #background-img{
+    }
+  
+    #first-comands {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-left: 30px;
+      width: 20%;
+      font-size: 1.7em;
+    }
+  
+    #second-comands {
+      display: flex;
+      align-items: center;
+      font-size: 1.7em;
+      margin-right: 5%;
+    }
+  
+    #play-button {
+      font-size: 2.1em;
+    }
+  }
+  
+  @media screen and (min-width: 1200px) {
+    #background-img {
       width: 100%;
       height: 700px;
-      background-size: 100%;  
-    background-repeat: no-repeat;
-  }
-    .detailName{
-        position: absolute;
-        bottom: 30px;
-        
-        font-size: 2.2em;
+      background-repeat: no-repeat;
+      
+      
     }
-
-    #ascoltatori{
-        position: absolute;
-        bottom: -10px;
-        
-        
+  
+    .detailName {
+      position: absolute;
+      bottom: 30px;
+      font-size: 2.2em;
     }
-
-    #arrow:hover{
-        cursor: pointer;
-        
+  
+    #ascoltatori {
+      position: absolute;
+      bottom: -10px;
     }
-    .comands{
+  
+    #arrow:hover {
+      cursor: pointer;
+    }
+  
+    .comands {
+      display: flex;
+      justify-content: flex-end;
+      flex-direction: row-reverse;
+      margin-left: 2%;
+      margin-bottom: 2%;
+    }
+  
+    #first-comands {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 12%;
+      font-size: 1.3em;
+    }
+  
+    #second-comands {
+      display: flex;
+      align-items: center;
+      font-size: 2.7em;
+      margin-right: 2%;
+    }
+  
+    #shuffle {
+      display: none;
+    }
+    .sidebar {
+        z-index: 1;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 285px;
+        height: 100vh;
+        background-color: #000000;
+        padding: 20px;
         display: flex;
-        justify-content: flex-end;
-        flex-direction: row-reverse;
-        margin-left: 2%;
-        margin-bottom: 2%;
-      }
-      
-      #first-comands {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          width: 12%;
-         
-          font-size: 1.3em;
-      }
-      
-      #second-comands{
-          display: flex;
-          align-items: center;
-          font-size: 2.7em;
-          margin-right: 2%;
-         
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
       }
 
-      #shuffle{
-        display: none;
-      
-    }
-}
+      .dekstopNav {
+        z-index: 1;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 245px;
+        height: 100vh;
+        background-color: #000000;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+      }
+      .user{
+        width: 20%;
+        height: 70%;
+        border-radius: 80px;
+        margin-right: 20px;
+      }
+      #conteiner-artist{
+        margin-left:16%;
+      }
+  }
+  
