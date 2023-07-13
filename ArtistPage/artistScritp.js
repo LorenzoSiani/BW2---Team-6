@@ -1,7 +1,7 @@
 const artistUrl = 'https://striveschool-api.herokuapp.com/api/deezer/artist/';
 const addressCont = new URLSearchParams(location.search);
 const artistId = addressCont.get('id');
-const body = document.querySelector('body')
+
 console.log(artistId)
 fetch(artistUrl + artistId
 )
@@ -231,12 +231,14 @@ const arrow = document.getElementById('arrow')
         }
         addClickEventToTrackRows();
     })
+
+    const container = document.getElementById('conteiner-artist')
     const coverImage = detail.picture_xl
     generateAverageColor(coverImage)
     .then((color) => {
-      body.style.background = `linear-gradient(to bottom, ${color} 0%, #000000 70%)`
-      body.style.backgroundRepeat = 'no-repeat'; // Prevent background repeat
-      body.style.backgroundSize = 'cover'; 
+     container.style.background = `linear-gradient(to bottom, ${color} 0%, #000000 70%)`
+     container.style.backgroundRepeat = 'no-repeat'; // Prevent background repeat
+     container.style.backgroundSize = 'cover'; 
       
     })
       .catch((error) => {

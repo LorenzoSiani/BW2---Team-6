@@ -56,12 +56,7 @@ body {
     }
     
     
-    .sidebar{
-        display: none;
-    }
-    .dekstopNav{
-        display: none;
-    }
+ 
     .detailName {
       position: absolute;
       bottom: 30px;
@@ -110,8 +105,8 @@ body {
     #background-img {
       width: 100%;
       height: 700px;
-      background-repeat: no-repeat;
-      
+     
+      background-position: center;
       
     }
   
@@ -156,63 +151,49 @@ body {
     #shuffle {
       display: none;
     }
-    .sidebar {
-        z-index: 1;
-        position: fixed;
-        top: 0;
-        right: 0;
-        width: 285px;
-        height: 100vh;
-        background-color: #000000;
-        padding: 20px;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: flex-start;
-      }
-
-      .dekstopNav {
-        z-index: 1;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 245px;
-        height: 100vh;
-        background-color: #000000;
-        padding: 20px;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: flex-start;
-      }
+  
+   
       .user{
         width: 20%;
         height: 70%;
         border-radius: 80px;
         margin-right: 20px;
       }
-      #conteiner-artist{
-        margin-left:16%;
+   
+      #artist-img{
+        width: 30px;
+        height: 30px;
+        border-radius: 40px;
+        margin-right: 5px;
       }
+     
+      
   }
   
 /*header e aside*/
 
-aside{
-    width: 250px;
-    background-color: black;
+#artist-img{
+  width: 30px;
+  height: 30px;
+  border-radius: 40px;
+  margin-right: 5px;
 }
-.desktopNav{
-    width: 260px;
-    background-color: black;
+aside{
+  
+  width: 260px;
+  background-color: black;
+}
+header{
+  width: 260px;
+  background-color: black;
 }
 li{
-    list-style: none;
+  list-style: none;
 }
 ul{
-    padding: 0;
+  padding: 0;
 }
 a, a:hover, a:focus, a:active {
-    text-decoration: none;
-    color: inherit;
+  text-decoration: none;
+  color: inherit;
 }
