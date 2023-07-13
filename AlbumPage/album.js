@@ -13,7 +13,7 @@ fetch(albumUrl + albumId)
   .then((data) => {
     const body = document.querySelector('body')
     const album = data
-
+     console.log(data);
     // Funzione per generare il colore medio di un'immagine
     function generateAverageColor(imageUrl) {
       return new Promise((resolve, reject) => {
