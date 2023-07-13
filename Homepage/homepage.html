@@ -17,155 +17,206 @@
     <link rel="stylesheet" href="../assets/css/navbar-style.css" />
     <link rel="stylesheet" href="./style.css" />
   </head>
-  <body class="d-flex">
-    <header class="d-none d-lg-block">
-      <div>
-        <nav>
-          <div>
-            <ul>
-              <li><i class="bi bi-three-dots mx-2"></i></li>
-              <li>
-                <a href="../Homepage/homepage.html">
-                  <i class="bi bi-house-door-fill mx-2"></i>
-                  Home
-                </a>
-              </li>
-              <li>
-                <a href="../Search/search.html">
-                  <i class="bi bi-search mx-2"></i>
-                  Cerca
-                </a>
-              </li>
-              <li>
-                <a href="../ArtistPage/artist.html">
-                  <i class="bi bi-bookshelf mx-2"></i>
-                  La tua libreria
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <ul>
-              <li><i class="bi bi-plus-square mx-2"></i>Crea playlist</li>
-              <li>
-                <i class="bi bi-box2-heart mx-2"></i>Brani che ti piacciono
-              </li>
-              <li><i class="bi bi-bookmark mx-2"></i>I tuoi episodi</li>
-            </ul>
-          </div>
-        </nav>
+  <body>
+    <div class="container-fluid d-none d-lg-flex flex-grow">
+      <header>
         <div>
+          <nav>
+            <div>
+              <ul>
+                <li><i class="bi bi-three-dots mx-2"></i></li>
+                <li>
+                  <a href="../Homepage/homepage.html">
+                    <i class="bi bi-house-door-fill mx-2"></i>
+                    Home
+                  </a>
+                </li>
+                <li>
+                  <a href="../Search/search.html">
+                    <i class="bi bi-search mx-2"></i>
+                    Cerca
+                  </a>
+                </li>
+                <li>
+                  <a href="../ArtistPage/artist.html">
+                    <i class="bi bi-bookshelf mx-2"></i>
+                    La tua libreria
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <ul>
+                <li><i class="bi bi-plus-square mx-2"></i>Crea playlist</li>
+                <li>
+                  <i class="bi bi-box2-heart mx-2"></i>Brani che ti piacciono
+                </li>
+                <li><i class="bi bi-bookmark mx-2"></i>I tuoi episodi</li>
+              </ul>
+            </div>
+          </nav>
           <div>
-            <p>Esempio titolo playlist</p>
-            <p>Esempio titolo playlist</p>
-            <p>Esempio titolo playlist</p>
-            <p>Esempio titolo playlist</p>
-            <p>Esempio titolo playlist</p>
-            <p>Esempio titolo playlist</p>
-            <p>Esempio titolo playlist</p>
-            <p>Esempio titolo playlist</p>
+            <div>
+              <p>Esempio titolo playlist</p>
+              <p>Esempio titolo playlist</p>
+              <p>Esempio titolo playlist</p>
+              <p>Esempio titolo playlist</p>
+              <p>Esempio titolo playlist</p>
+              <p>Esempio titolo playlist</p>
+              <p>Esempio titolo playlist</p>
+              <p>Esempio titolo playlist</p>
+            </div>
           </div>
         </div>
-      </div>
-    </header>
-    <main class="bg-dark">
-      <section class="d-flex">
-        <img id="img-top" src="/assets/imgs/main/image-15.jpg" alt="" />
+      </header>
+      <main class="bg-dark">
+        <section class="d-flex">
+          <img id="img-top" src="/assets/imgs/main/image-15.jpg" alt="" />
 
-        <div class="ms-3 my-2">
-          <p>Album</p>
-          <h1 class="mt-3">Titolo canzone</h1>
-          <p>artista</p>
-          <p>Acolta il nuovo brano di (nome artista)</p>
-          <button class="btn-play">Play</button>
-          <button class="btn-salva">Salva</button>
+          <div class="ms-3 my-2">
+            <p>Album</p>
+            <h1 class="mt-3">Titolo canzone</h1>
+            <p>artista</p>
+            <p>Acolta il nuovo brano di (nome artista)</p>
+            <button class="btn-play">Play</button>
+            <button class="btn-salva">Salva</button>
+          </div>
+        </section>
+        <section>
+          <h3>Buonasera</h3>
+
+          <div class="row row-cols-3 container-fluid">
+            <div class="six-cards d-flex col align-items-center">
+              <img
+                src="/assets/imgs/main/image-6.jpg"
+                class="img-sect-2"
+                alt=""
+              />
+              <p>Titolo play list esempio</p>
+            </div>
+            <div class="six-cards d-flex col align-items-center">
+              <img
+                src="/assets/imgs/main/image-6.jpg"
+                class="img-sect-2"
+                alt=""
+              />
+              <p>Titolo play list esempio</p>
+            </div>
+            <div class="six-cards d-flex col align-items-center">
+              <img
+                src="/assets/imgs/main/image-6.jpg"
+                class="img-sect-2"
+                alt=""
+              />
+              <p>Titolo play list esempio</p>
+            </div>
+            <div class="six-cards d-flex col align-items-center">
+              <img
+                src="/assets/imgs/main/image-6.jpg"
+                class="img-sect-2"
+                alt=""
+              />
+              <p>Titolo play list esempio</p>
+            </div>
+            <div class="six-cards d-flex col align-items-center">
+              <img
+                src="/assets/imgs/main/image-6.jpg"
+                class="img-sect-2"
+                alt=""
+              />
+              <p>Titolo play list esempio</p>
+            </div>
+            <div class="six-cards d-flex col align-items-center">
+              <img
+                src="/assets/imgs/main/image-6.jpg"
+                class="img-sect-2"
+                alt=""
+              />
+              <p>Titolo play list esempio</p>
+            </div>
+          </div>
+        </section>
+
+        <div id="album-container" class="row row-cols-2"></div>
+      </main>
+      <aside>
+        <div>
+          <h4 class="text-center">Attività amici</h4>
+          <div class="d-flex justify-content-start p-2 mx-3">
+            <img id="artist-img" src="/assets/imgs/main/image-1.jpg" alt="" />
+
+            <div>
+              <p>Nome Acaso</p>
+              <p>esempio titolo cazone a caso</p>
+            </div>
+          </div>
+          <div class="d-flex justify-content-start p-2 mx-3">
+            <img id="artist-img" src="/assets/imgs/main/image-2.jpg" alt="" />
+
+            <div>
+              <p>Nome Acaso</p>
+              <p>esempio titolo cazone a caso</p>
+            </div>
+          </div>
+          <div class="d-flex justify-content-start p-2 mx-3">
+            <img id="artist-img" src="/assets/imgs/main/image-3.jpg" alt="" />
+
+            <div>
+              <p>Nome Acaso</p>
+              <p>esempio titolo cazone a caso</p>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+    <div class="container-fluid d-lg-none">
+      <section class="d-flex justify-content-between">
+        <div>
+          <h1 class="text-light p-2">Buonasera</h1>
+        </div>
+        <div class="w-50 d-flex justify-content-end align-items-center">
+          <ion-icon
+            name="notifications-outline"
+            class="text-light fs-1 p-2"
+          ></ion-icon>
+          <ion-icon name="timer-outline" class="text-light fs-1 p-2"></ion-icon>
+          <ion-icon
+            name="settings-outline"
+            class="text-light fs-1 p-2"
+          ></ion-icon>
         </div>
       </section>
-      <section>
-        <h3>Buonasera</h3>
-
-        <div class="row row-cols-3">
-          <div class="six-cards d-flex col align-items-center">
-            <img
-              src="/assets/imgs/main/image-6.jpg"
-              class="img-sect-2"
-              alt=""
-            />
-            <p>Titolo play list esempio</p>
-          </div>
-          <div class="six-cards d-flex col align-items-center">
-            <img
-              src="/assets/imgs/main/image-6.jpg"
-              class="img-sect-2"
-              alt=""
-            />
-            <p>Titolo play list esempio</p>
-          </div>
-          <div class="six-cards d-flex col align-items-center">
-            <img
-              src="/assets/imgs/main/image-6.jpg"
-              class="img-sect-2"
-              alt=""
-            />
-            <p>Titolo play list esempio</p>
-          </div>
-          <div class="six-cards d-flex col align-items-center">
-            <img
-              src="/assets/imgs/main/image-6.jpg"
-              class="img-sect-2"
-              alt=""
-            />
-            <p>Titolo play list esempio</p>
-          </div>
-          <div class="six-cards d-flex col align-items-center">
-            <img
-              src="/assets/imgs/main/image-6.jpg"
-              class="img-sect-2"
-              alt=""
-            />
-            <p>Titolo play list esempio</p>
-          </div>
-          <div class="six-cards d-flex col align-items-center">
-            <img
-              src="/assets/imgs/main/image-6.jpg"
-              class="img-sect-2"
-              alt=""
-            />
-            <p>Titolo play list esempio</p>
-          </div>
+      <div class="d-flex justify-content-start">
+        <p class="text-light p-4">Musica</p>
+        <p class="text-light p-4">Podcast e show</p>
+      </div>
+      <div class="row row-cols-lg-3 container-fluid">
+        <div class="six-cards d-flex col align-items-center">
+          <img src="/assets/imgs/main/image-6.jpg" class="img-sect-2" alt="" />
+          <p>Titolo play list esempio</p>
         </div>
-      </section>
-
-      <div id="album-container" class="row row-cols-1 row-cols-lg-2"></div>
-    </main>
-    <aside class="d-none d-lg-block">
-      <div>
-        <h4 class="text-center">Attività amici</h4>
-        <div class="d-flex justify-content-start p-2 mx-3">
-          <img id="artist-img" src="/assets/imgs/main/image-1.jpg" alt="" />
-
-          <div>
-            <p>Nome Acaso</p>
-            <p>esempio titolo cazone a caso</p>
-          </div>
+        <div class="six-cards d-flex col align-items-center">
+          <img src="/assets/imgs/main/image-6.jpg" class="img-sect-2" alt="" />
+          <p>Titolo play list esempio</p>
         </div>
-        <div class="d-flex justify-content-start p-2 mx-3">
-          <img id="artist-img" src="/assets/imgs/main/image-2.jpg" alt="" />
-
-          <div>
-            <p>Nome Acaso</p>
-            <p>esempio titolo cazone a caso</p>
-          </div>
+        <div class="six-cards d-flex col align-items-center">
+          <img src="/assets/imgs/main/image-6.jpg" class="img-sect-2" alt="" />
+          <p>Titolo play list esempio</p>
         </div>
-        <div class="d-flex justify-content-start p-2 mx-3">
-          <img id="artist-img" src="/assets/imgs/main/image-3.jpg" alt="" />
-
-          <div>
-            <p>Nome Acaso</p>
-            <p>esempio titolo cazone a caso</p>
-          </div>
+        <div class="six-cards d-flex col align-items-center">
+          <img src="/assets/imgs/main/image-6.jpg" class="img-sect-2" alt="" />
+          <p>Titolo play list esempio</p>
+        </div>
+        <div class="six-cards d-flex col align-items-center">
+          <img src="/assets/imgs/main/image-6.jpg" class="img-sect-2" alt="" />
+          <p>Titolo play list esempio</p>
+        </div>
+        <div class="six-cards d-flex col align-items-center">
+          <img src="/assets/imgs/main/image-6.jpg" class="img-sect-2" alt="" />
+          <p>Titolo play list esempio</p>
         </div>
       </div>
+      <div id="album-container-2" class="row row-cols-1 row-cols-lg-2"></div>
     </div>
     <div id="album-container"></div>
     <!-- Current song bar -->
