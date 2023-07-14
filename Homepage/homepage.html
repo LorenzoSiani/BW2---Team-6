@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Homepage Epicfy</title>
+    <title>Bootstrap demo</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -19,8 +19,8 @@
   </head>
   <body>
     <div class="container-fluid d-none d-lg-flex flex-grow">
-      <header>
-        <div>
+      <header class="position-relative">
+        <div class="position-fixed">
           <nav>
             <div>
               <ul>
@@ -45,6 +45,7 @@
                 </li>
               </ul>
             </div>
+
             <div>
               <ul>
                 <li><i class="bi bi-plus-square mx-2"></i>Crea playlist</li>
@@ -54,15 +55,16 @@
                 <li><i class="bi bi-bookmark mx-2"></i>I tuoi episodi</li>
               </ul>
             </div>
+            <hr />
           </nav>
           <div>
-            <div>
+            <div id="playList">
               <p>Sun & Sea <i class="bi bi-brightness-alt-high-fill"></i></p>
-              <p>Running <ion-icon name="bicycle-outline"></ion-icon></p>
+              <p>running <ion-icon name="bicycle-outline"></ion-icon></p>
               <p>Love it !</p>
-              <p>Depression <i class="bi bi-emoji-frown-fill"></i></p>
-              <p>On Trip <i class="bi bi-airplane"></i></p>
-              <p>On travel <i class="bi bi-bus-front-fill"></i></p>
+              <p>depression <i class="bi bi-emoji-frown-fill"></i></p>
+              <p>on Trip <i class="bi bi-airplane"></i></p>
+              <p>on travel <i class="bi bi-bus-front-fill"></i></p>
               <p>Rainy Days <i class="bi bi-cloud-rain-fill"></i></p>
               <p>
                 DAMN LOVE ITTT
@@ -70,12 +72,15 @@
                   ><i class="bi bi-exclamation-triangle"></i
                 ></i>
               </p>
+              <p>Mashup vari</p>
+              <p>tomorrowland 2k21 <i class="bi bi-globe-americas"></i></p>
+              <p>Tiziano spanish</p>
             </div>
           </div>
         </div>
       </header>
       <main class="bg-dark">
-        <section class="d-flex top-section flex-grow m-4">
+        <section class="d-flex top-section flex-grow m-3">
           <img
             id="img-top"
             src="https://i1.sndcdn.com/artworks-XJdVplPCbvDvJlH7-jF9c4A-t500x500.jpg"
@@ -84,16 +89,17 @@
           />
 
           <div class="ms-3 my-2">
-            <p>Album</p>
-            <h1 class="mt-3">Titolo canzone</h1>
-            <p>artista</p>
-            <p>Acolta il nuovo brano di (nome artista)</p>
+            <p>ALBUM</p>
+            <h1 class="mt-3">Never Gonna Give You Up</h1>
+            <p>Rick Astley</p>
+            <p class="pt-4 pb-1">Ascolta il nuovo brano di Rick Astley !</p>
             <button class="btn-play">Play</button>
             <button class="btn-salva">Salva</button>
+            <i class="bi bi-three-dots p-3"></i>
           </div>
         </section>
         <section>
-          <h3 class="m-3" class="m-3">Buonasera</h3>
+          <h3 class="m-3">Buonasera</h3>
           <div class="container-fluid" id="artistName">
             <div class="row row-cols-3 g-2">
               <div class="col">
@@ -103,7 +109,7 @@
                     class="img-sect-2"
                     alt=""
                   />
-                  <p>Kanye West</p>
+                  <p class="ms-2">Kanye West</p>
                 </div>
               </div>
               <div class="col">
@@ -113,17 +119,17 @@
                     class="img-sect-2"
                     alt=""
                   />
-                  <p>The Weekend</p>
+                  <p class="ms-2">The Weekend</p>
                 </div>
               </div>
               <div class="col">
                 <div class="six-cards d-flex align-items-center">
                   <img
-                    src="https://us.123rf.com/450wm/elaineitalia/elaineitalia1601/elaineitalia160100011/51298160-bianco-love-cuore-pi%C3%B9-profondo-lucido-sfondo-nero.jpg"
+                    src="https://us.123rf.com/450wm/jpgon/jpgon1606/jpgon160601425/58191342-l-icona-di-un-cuore-bianco-su-uno-sfondo-scuro-illustrazione-vettoriale.jpg?ver=6"
                     class="img-sect-2"
                     alt=""
                   />
-                  <p>Brani che ti piacciono</p>
+                  <p class="ms-2">Brani che ti piacciono...</p>
                 </div>
               </div>
               <div class="col">
@@ -133,7 +139,7 @@
                     class="img-sect-2"
                     alt=""
                   />
-                  <p>Michael Jackson</p>
+                  <p class="ms-2">Michael Jackson</p>
                 </div>
               </div>
               <div class="col">
@@ -143,7 +149,7 @@
                     class="img-sect-2"
                     alt=""
                   />
-                  <p>Nirvana</p>
+                  <p class="ms-2">Nirvana</p>
                 </div>
               </div>
               <div class="col">
@@ -153,40 +159,57 @@
                     class="img-sect-2"
                     alt=""
                   />
-                  <p>Kendrick Lamar</p>
+                  <p class="ms-2">Kendrick Lamar</p>
                 </div>
               </div>
             </div>
           </div>
         </section>
-
+        <h5 class="m-3">Altro di ciò che ti piace</h5>
         <div id="album-container" class="row row-cols-5 mt-4 mx-2"></div>
       </main>
       <aside class="position-relative">
         <div class="position-fixed">
           <div>
-            <h4 class="text-center">Attività amici</h4>
-            <div class="d-flex justify-content-start p-2 mx-3">
-              <img id="artist-img" src="/assets/imgs/main/image-1.jpg" alt="" />
-
+            <div class="d-flex justify-content-around align-items-baseline">
+              <h6 class="text-center py-3">Attività amici</h6>
               <div>
-                <p>Nome Acaso</p>
-                <p>esempio titolo cazone a caso</p>
+                <i class="bi bi-person-plus-fill"></i>
+                <i class="bi bi-x-lg"></i>
               </div>
             </div>
             <div class="d-flex justify-content-start p-2 mx-3">
-              <img id="artist-img" src="/assets/imgs/main/image-2.jpg" alt="" />
+              <img
+                id="artist-img"
+                src="https://e7.pngegg.com/pngimages/96/565/png-clipart-mario-party-star-rush-super-mario-bros-super-mario-galaxy-mario-bros-super-mario-bros-nintendo-thumbnail.png"
+                alt=""
+              />
 
               <div>
-                <p>Nome Acaso</p>
-                <p>esempio titolo cazone a caso</p>
+                <p>Mario Bros</p>
+                <p>Saving Peach</p>
               </div>
             </div>
             <div class="d-flex justify-content-start p-2 mx-3">
-              <img id="artist-img" src="/assets/imgs/main/image-3.jpg" alt="" />
+              <img
+                id="artist-img"
+                src="https://steamuserimages-a.akamaihd.net/ugc/986757308323729564/7DB976F94920240EDFA1DD1336D39F1DD454335A/?imw=512&&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false"
+                alt=""
+              />
+              <div>
+                <p>Son Goku</p>
+                <p>Genkidama Charging</p>
+              </div>
+            </div>
+            <div class="d-flex justify-content-start p-2 mx-3">
+              <img
+                id="artist-img"
+                src="https://www.dragonballforever.it/wp-content/uploads/2016/11/crilin5.jpg"
+                alt=""
+              />
 
               <div>
-                <p>Crillin</p>
+                <p>Crilin</p>
                 <p>Immortals</p>
               </div>
             </div>
@@ -200,18 +223,10 @@
           <h1 class="text-light p-2 m-3">Buonasera</h1>
         </div>
         <div class="w-50 d-flex justify-content-end align-items-center">
-          <div
-            class="d-flex justify-content-end align-items-center position-relative"
-          >
-            <ion-icon
-              name="notifications-outline"
-              class="text-light fs-1 p-2"
-            ></ion-icon>
-            <div id="dot" class="position-absolute text-primary">
-              <i class="bi bi-dot"></i>
-            </div>
-          </div>
-
+          <ion-icon
+            name="notifications-outline"
+            class="text-light fs-1 p-2"
+          ></ion-icon>
           <ion-icon name="timer-outline" class="text-light fs-1 p-2"></ion-icon>
           <ion-icon
             name="settings-outline"
@@ -228,61 +243,61 @@
           <div class="col">
             <div class="six-cards d-flex align-items-center bg-transparent">
               <img
-                src="/assets/imgs/main/image-6.jpg"
+                src="https://www.outpump.com/wp-content/uploads/2021/07/kanye-west-cover-arte-outpump33.png"
                 class="img-sect-2"
                 alt=""
               />
-              <p>Titolo play list esempio</p>
+              <p class="ms-3">Kanye West</p>
             </div>
           </div>
           <div class="col">
             <div class="six-cards d-flex align-items-center bg-transparent">
               <img
-                src="/assets/imgs/main/image-6.jpg"
+                src="https://pbs.twimg.com/media/Cs47zArVYAAg5dS.jpg"
                 class="img-sect-2"
                 alt=""
               />
-              <p>Titolo play list esempio</p>
+              <p class="ms-2">The Weekend</p>
             </div>
           </div>
           <div class="col">
             <div class="six-cards d-flex align-items-center bg-transparent">
               <img
-                src="/assets/imgs/main/image-6.jpg"
+                src="https://us.123rf.com/450wm/jpgon/jpgon1606/jpgon160601425/58191342-l-icona-di-un-cuore-bianco-su-uno-sfondo-scuro-illustrazione-vettoriale.jpg?ver=6"
                 class="img-sect-2"
                 alt=""
               />
-              <p>Titolo play list esempio</p>
+              <p class="ms-2">Brani che ti piacciono...</p>
             </div>
           </div>
           <div class="col">
             <div class="six-cards d-flex align-items-center bg-transparent">
               <img
-                src="/assets/imgs/main/image-6.jpg"
+                src="https://legendarycover.it/wp-content/uploads/2019/01/dangerous-e1546725055608.jpg"
                 class="img-sect-2"
                 alt=""
               />
-              <p>Titolo play list esempio</p>
+              <p class="ms-2">Michael Jackson</p>
             </div>
           </div>
           <div class="col">
             <div class="six-cards d-flex align-items-center bg-transparent">
               <img
-                src="/assets/imgs/main/image-6.jpg"
+                src="https://legendarycover.it/wp-content/uploads/2018/12/copertina-nevermind-nirvana.jpg"
                 class="img-sect-2"
                 alt=""
               />
-              <p>Titolo play list esempio</p>
+              <p class="ms-2">Nirvana</p>
             </div>
           </div>
           <div class="col">
             <div class="six-cards d-flex align-items-center bg-transparent">
               <img
-                src="/assets/imgs/main/image-6.jpg"
+                src="https://upload.wikimedia.org/wikipedia/en/5/51/Kendrick_Lamar_-_Damn.png"
                 class="img-sect-2"
                 alt=""
               />
-              <p>Titolo play list esempio</p>
+              <p class="ms-2">Kendrick Lamar</p>
             </div>
           </div>
         </div>
