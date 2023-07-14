@@ -13,7 +13,7 @@ fetch(albumUrl + albumId)
   .then((data) => {
     const body = document.querySelector('body')
     const album = data
-     console.log(data);
+     console.log(data.tracks.data[1].preview);
     // Funzione per generare il colore medio di un'immagine
     function generateAverageColor(imageUrl) {
       return new Promise((resolve, reject) => {
@@ -120,10 +120,10 @@ fetch(albumUrl + albumId)
     const commands = `
       <div class="comands mt-3">
         <div id="first-comands">
-          <i id="heart" class="bi bi-heart"></i>
-          <i class="bi bi-arrow-down-circle text-secondary"></i>
-          <i class="bi bi-three-dots-vertical text-secondary d-inline-block d-lg-none"></i>
-          <i class="bi bi-three-dots text-secondary d-none d-lg-inline-block"></i>
+          <i id="heart" class="bi bi-heart mx-2"></i>
+          <i class="bi bi-arrow-down-circle text-secondary mx-2"></i>
+          <i class="bi bi-three-dots-vertical text-secondary d-inline-block d-lg-none mx-2"></i>
+          <i class="bi bi-three-dots text-secondary d-none d-lg-inline-block mx-2"></i>
         </div>
         <div id="second-comands">
           <i id="shuffle" class="bi bi-shuffle text-secondary"></i>
@@ -252,8 +252,13 @@ const mainContainer = document.getElementById('main-container')
 
     function addClickEventToTrackRows() {
       const trackRows = document.querySelectorAll(".track-row");
-      trackRows.forEach((row) => {
+      trackRows.forEach((row,i) => {
         row.addEventListener("click", function () {
+          const mySong = document.getElementById('song')
+          mySong.setAttribute('src',data.tracks.data[i].preview )
+          mySong.load()
+          
+          console.log(data.tracks.data[0].preview);
           const selectedTrackNumber = row.dataset.trackNumber;
           const trackTitle = row.querySelector(".track-title");
     
@@ -276,11 +281,13 @@ const mainContainer = document.getElementById('main-container')
           }
     
           if (row.classList.contains("selected")) {
+            mySong.pause()
             row.classList.remove("selected");
             trackTitle.classList.remove("text-success");
             trackTitle.classList.add("text-light");
             row.querySelector(".text-secondary").textContent = selectedTrackNumber;
           } else {
+            
             trackRows.forEach((trackRow) => {
               trackRow.classList.remove("selected");
               trackRow
@@ -289,6 +296,7 @@ const mainContainer = document.getElementById('main-container')
               trackRow.querySelector(".track-title").classList.add("text-light");
               trackRow.querySelector(".text-secondary").textContent =
                 trackRow.dataset.trackNumber;
+                
             });
     
             row.classList.add("selected");
