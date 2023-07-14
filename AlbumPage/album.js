@@ -405,7 +405,32 @@ const mainContainer = document.getElementById('main-container')
     
     addClickEventToTrackRows();
     // Chiamata alla funzione per aggiungere gli eventi di click alle righe delle tracce
-
+        // Add a resize event listener to the window object
+        window.addEventListener("resize", function () {
+          // Re-evaluate the screen size check
+          if (window.matchMedia("(max-width: 767px)").matches) {
+            // Show the current song bar on smaller screens
+            const currentSongBar = document.querySelector(".current-song-bar");
+            currentSongBar.style.display = "flex";
+          } else {
+            // Hide the current song bar on larger screens
+            const currentSongBar = document.querySelector(".current-song-bar");
+            currentSongBar.style.display = "none";
+          }
+ });
+         // Add a resize event listener to the window object
+         window.addEventListener("resize", function () {
+          // Re-evaluate the screen size check
+          if (window.matchMedia("(max-width: 767px)").matches) {
+            // Show the current song bar on smaller screens
+            const currentSongBar = document.querySelector(".current-song-bar");
+            currentSongBar.style.display = "flex";
+          } else {
+            // Hide the current song bar on larger screens
+            const currentSongBar = document.querySelector(".current-song-bar");
+            currentSongBar.style.display = "none";
+          }
+ });
     const heart = document.getElementById('heart')
     heart.addEventListener('click', function () {
       if (heart.classList.contains('bi-heart-fill')) {
