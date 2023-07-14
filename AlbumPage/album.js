@@ -245,7 +245,7 @@ const footer=`
     <div class="row d-md-flex justify-content-between">
       <div class="col-4 d-none d-md-flex align-items-center">
         <div id="imageContainer" class="mx-2 rounded-circle rounded-sm-0">
-          <img src="" alt="image" />
+          <img src="${album.cover_small}" alt="image" />
         </div>
 
         <div class="d-flex flex-column align-self-center pt-3">
