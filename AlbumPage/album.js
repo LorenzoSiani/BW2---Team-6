@@ -236,6 +236,86 @@ const navbar = `
   </div>
 </nav>
 `;
+
+// Create Footer
+const footer=`
+<!-- footer -->
+<footer class="text-light position-fixed bottom-0 w-100">
+  <div class="container-fluid">
+    <div class="row d-md-flex justify-content-between">
+      <div class="col-4 d-none d-md-flex align-items-center">
+        <div id="imageContainer" class="mx-2 rounded-circle rounded-sm-0">
+          <img src="" alt="image" />
+        </div>
+
+        <div class="d-flex flex-column align-self-center pt-3">
+          <p class="mx-2 fs-5 text mb-0">${currentTrack.title}</p>
+          <p class="mx-2 d-none d-md-block fs-6 text mt-0 fw-light">
+          ${currentTrack.artist.name}
+          </p>
+        </div>
+        <div><i class="bi bi-heart mx-2" id="heartIconBig"></i></div>
+      </div>
+      <div
+        class="col col-md-4 d-none d-md-block d-flex flex-column align-self-center"
+      >
+        <div class="d-flex justify-content-center align-items-center pt-2">
+          <a href="#" id="colorToggleShuffle">
+            <i class="bi bi-shuffle px-2" id="shuffleIcon"></i>
+          </a>
+          <i class="bi bi-skip-backward px-3"></i>
+          <i class="bi bi-play-circle-fill mx-2 fs-2" id="playPause"></i>
+          <i class="bi bi-skip-forward px-3"></i>
+          <a href="#" id="colorToggleRepeat">
+            <i class="bi bi-repeat px-2" id="repeatIcon"></i>
+          </a>
+        </div>
+
+        <div class="d-flex align-items-center justify-content-between">
+          <p class="m-0" id="songStartPoint">0:00</p>
+          <input
+            type="range"
+            name="bi-volume-down"
+            id="volumeScrollBar"
+            min="0"
+            max="100"
+            value="30"
+            class="px-2"
+          />
+          <p class="m-0" id="songEndPoint">4:26</p>
+        </div>
+      </div>
+      <div
+        class="col col-4 d-none d-md-flex flex-row align-items-center justify-content-end"
+      >
+        <a href="#" class="text-decoration-none text-light"
+          ><i class="bi bi-mic px-2"></i
+        ></a>
+        <a href="#" class="text-decoration-none text-light"
+          ><i class="bi bi-menu-button-wide px-2"></i
+        ></a>
+        <a href="#" class="text-decoration-none text-light"
+          ><i class="bi bi-speaker px-2"></i
+        ></a>
+        <a href="#" class="text-decoration-none text-light"
+          ><i class="bi bi-volume-down px-2"></i
+        ></a>
+        <input
+          type="range"
+          name="bi-volume-down"
+          id="volumeScrollBar"
+          min="0"
+          max="100"
+          value="60"
+        />
+        <a href="#" class="text-decoration-none text-light"
+          ><i class="bi bi-arrows-angle-expand px-2"></i
+        ></a>
+      </div>
+    </div>
+  </div>
+</footer>
+`;
     // Construct the updated HTML
     const updatedHTML = `
     ${main}
@@ -246,6 +326,7 @@ const navbar = `
     </div>
     ${currentSongBar}
     ${navbar}
+    ${footer}
   `;
 const mainContainer = document.getElementById('main-container')
     mainContainer.innerHTML = updatedHTML
@@ -260,18 +341,31 @@ const mainContainer = document.getElementById('main-container')
           const trackIndex = selectedTrackNumber - 1;
           const track = album.tracks.data[trackIndex];
     
-          const currentSongBar = document.querySelector(".current-song-bar");
-          const currentSongTitle = currentSongBar.querySelector(".song-title");
-          const currentSongArtist = currentSongBar.querySelector(".song-artist");
-    
-          currentSongTitle.textContent = track.title;
-          currentSongArtist.textContent = album.artist.name;
-    
-          // Show the current song bar on smaller screens
+          // Update the current song bar or footer depending on screen size
           if (window.matchMedia("(max-width: 767px)").matches) {
+            // Update the current song bar on smaller screens
+            const currentSongBar = document.querySelector(".current-song-bar");
+            const currentSongTitle = currentSongBar.querySelector(".song-title");
+            const currentSongArtist = currentSongBar.querySelector(".song-artist");
+    
+            currentSongTitle.textContent = track.title;
+            currentSongArtist.textContent = album.artist.name;
+    
+            // Show the current song bar
             currentSongBar.style.display = "flex";
           } else {
-            // Hide the current song bar on larger screens
+            // Update the footer on larger screens
+            const footer = document.querySelector("footer");
+            const footerSongTitle = footer.querySelector(".fs-5.text.mb-0");
+            const footerSongArtist = footer.querySelector(
+              ".d-none.d-md-block.fs-6.text.mt-0.fw-light"
+            );
+    
+            footerSongTitle.textContent = track.title;
+            footerSongArtist.textContent = album.artist.name;
+    
+            // Hide the current song bar
+            const currentSongBar = document.querySelector(".current-song-bar");
             currentSongBar.style.display = "none";
           }
     
@@ -279,7 +373,8 @@ const mainContainer = document.getElementById('main-container')
             row.classList.remove("selected");
             trackTitle.classList.remove("text-success");
             trackTitle.classList.add("text-light");
-            row.querySelector(".text-secondary").textContent = selectedTrackNumber;
+            row.querySelector(".text-secondary").textContent =
+              selectedTrackNumber;
           } else {
             trackRows.forEach((trackRow) => {
               trackRow.classList.remove("selected");
