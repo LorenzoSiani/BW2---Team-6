@@ -341,31 +341,30 @@ const mainContainer = document.getElementById('main-container')
           const trackIndex = selectedTrackNumber - 1;
           const track = album.tracks.data[trackIndex];
     
-          // Update the current song bar or footer depending on screen size
+          // Update the current song bar
+          const currentSongBar = document.querySelector(".current-song-bar");
+          const currentSongTitle = currentSongBar.querySelector(".song-title");
+          const currentSongArtist = currentSongBar.querySelector(".song-artist");
+    
+          currentSongTitle.textContent = track.title;
+          currentSongArtist.textContent = album.artist.name;
+    
+          // Update the footer
+          const footer = document.querySelector("footer");
+          const footerSongTitle = footer.querySelector(".fs-5.text.mb-0");
+          const footerSongArtist = footer.querySelector(
+            ".d-none.d-md-block.fs-6.text.mt-0.fw-light"
+          );
+    
+          footerSongTitle.textContent = track.title;
+          footerSongArtist.textContent = album.artist.name;
+    
+          // Show or hide the current song bar depending on screen size
           if (window.matchMedia("(max-width: 767px)").matches) {
-            // Update the current song bar on smaller screens
-            const currentSongBar = document.querySelector(".current-song-bar");
-            const currentSongTitle = currentSongBar.querySelector(".song-title");
-            const currentSongArtist = currentSongBar.querySelector(".song-artist");
-    
-            currentSongTitle.textContent = track.title;
-            currentSongArtist.textContent = album.artist.name;
-    
-            // Show the current song bar
+            // Show the current song bar on smaller screens
             currentSongBar.style.display = "flex";
           } else {
-            // Update the footer on larger screens
-            const footer = document.querySelector("footer");
-            const footerSongTitle = footer.querySelector(".fs-5.text.mb-0");
-            const footerSongArtist = footer.querySelector(
-              ".d-none.d-md-block.fs-6.text.mt-0.fw-light"
-            );
-    
-            footerSongTitle.textContent = track.title;
-            footerSongArtist.textContent = album.artist.name;
-    
-            // Hide the current song bar
-            const currentSongBar = document.querySelector(".current-song-bar");
+            // Hide the current song bar on larger screens
             currentSongBar.style.display = "none";
           }
     
