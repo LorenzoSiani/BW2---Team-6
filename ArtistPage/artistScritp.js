@@ -201,7 +201,22 @@ const arrow = document.getElementById('arrow')
         })
 
 
-              function addClickEventToTrackRows() {
+        const firstTrack = brani.data[0];
+
+        // Update the album cover image
+        const img = document.querySelector("#imageContainer img");
+        img.src = firstTrack.album.cover_small;
+        
+        // Update the footer
+        const footerSongTitle = document.querySelector("footer .fs-5.text.mb-0");
+        const footerSongArtist = document.querySelector(
+          "footer .d-none.d-md-block.fs-6.text.mt-0.fw-light"
+        );
+        
+        footerSongTitle.textContent = firstTrack.title;
+        footerSongArtist.textContent = firstTrack.artist.name;
+        
+        function addClickEventToTrackRows() {
           const trackRows = document.querySelectorAll(".track-row");
           trackRows.forEach((row) => {
             row.addEventListener("click", function () {
@@ -270,6 +285,7 @@ const arrow = document.getElementById('arrow')
         }
         
         addClickEventToTrackRows();
+        
         // Add a resize event listener to the window object
         window.addEventListener("resize", function () {
          // Re-evaluate the screen size check
