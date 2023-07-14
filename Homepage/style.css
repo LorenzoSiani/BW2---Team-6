@@ -46,6 +46,7 @@ ul {
     border-radius: 10px;
     background-color: rgb(46, 46, 46); 
     margin-bottom: 20px;
+    
 }
 .img-card:hover {
     background-color:  rgba(195, 188, 188, 0.525);
@@ -107,12 +108,15 @@ a, a:hover, a:focus, a:active {
 .mainCards {
     background: rgb(175, 145, 144);
     margin: 20px;
+    
+    /* word-wrap: break-word; */
 }
 
 .mainCards2 {
-  
+    /* word-wrap: break-word; */
     background:  rgba(36,36,36,1) ;
     margin: 20px;
+    height: 100%;
 }
 
 #dot {
