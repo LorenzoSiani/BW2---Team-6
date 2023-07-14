@@ -38,14 +38,24 @@ ul {
     height: 50px;
     border-radius: 40px;
     margin-right: 5px;
+    
 }
 
 .img-card {
-    min-width: 100px;
-    max-width: 220px;
-    background-color: rgb(46, 46, 46);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    background-color: rgb(46, 46, 46); 
     margin-bottom: 20px;
 }
+.img-card:hover {
+    background-color:  rgba(195, 188, 188, 0.525);
+    cursor: pointer;
+  }
+
+  .card-img-top {
+    max-height: 250px;
+    object-fit: cover;
+  }
 
 .img-sect-2 {
     height: 60px;
@@ -100,8 +110,8 @@ a, a:hover, a:focus, a:active {
 }
 
 .mainCards2 {
-    background: rgb(175, 145, 144);
-    background: linear-gradient(151deg, rgba(152,69,64,1) 0%, rgba(36,36,36,1) 18%);
+  
+    background:  rgba(36,36,36,1) ;
     margin: 20px;
 }
 
