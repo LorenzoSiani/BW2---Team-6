@@ -226,15 +226,17 @@ body{
 }
 aside{
     
-    width: 250px;
+    width: 220px;
     background-color: black;
 }
 header{
-    width: 260px;
+    width: 300px;
     background-color: black;
 }
 li{
     list-style: none;
+    padding: 0.5rem;
+    
 }
 ul{
     padding: 0;
@@ -242,4 +244,8 @@ ul{
 a, a:hover, a:focus, a:active {
     text-decoration: none;
     color: inherit;
+}
+
+#playList {
+    padding-left: 1rem;
 }
