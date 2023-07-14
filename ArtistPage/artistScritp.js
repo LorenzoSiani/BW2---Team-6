@@ -98,7 +98,7 @@ fetch(artistUrl + artistId
   </div>
 </div>
 <h3  class=" mx-5 mt-3" >Popolari</h3>
-<div id="tracklist-conteiner" class="d-flex flex-column">
+<div id="tracklist-conteiner" class="d-flex flex-column mb-5 pb-3">
 </div>
     `
 

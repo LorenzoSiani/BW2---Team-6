@@ -237,6 +237,7 @@ const navbar = `
 </nav>
 `;
 const firstTrack = album.tracks.data[0];
+
 // Create Footer
 const footer=`
 <!-- footer -->
