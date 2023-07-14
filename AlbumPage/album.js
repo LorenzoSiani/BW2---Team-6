@@ -236,7 +236,7 @@ const navbar = `
   </div>
 </nav>
 `;
-
+const firstTrack = album.tracks.data[0];
 // Create Footer
 const footer=`
 <!-- footer -->
@@ -249,7 +249,7 @@ const footer=`
         </div>
 
         <div class="d-flex flex-column align-self-center pt-3">
-          <p class="mx-2 fs-5 text mb-0">${currentTrack.title}</p>
+        <p class="mx-2 fs-5 text mb-0">${firstTrack.title}</p>
           <p class="mx-2 d-none d-md-block fs-6 text mt-0 fw-light">
           ${currentTrack.artist.name}
           </p>
@@ -333,12 +333,12 @@ const mainContainer = document.getElementById('main-container')
 
     function addClickEventToTrackRows() {
       const trackRows = document.querySelectorAll(".track-row");
-      trackRows.forEach((row,i) => {
+      trackRows.forEach((row, i) => {
         row.addEventListener("click", function () {
-          const mySong = document.getElementById('song')
-          mySong.setAttribute('src',data.tracks.data[i].preview )
-          mySong.load()
-          
+          const mySong = document.getElementById("song");
+          mySong.setAttribute("src", data.tracks.data[i].preview);
+          mySong.load();
+    
           console.log(data.tracks.data[0].preview);
           const selectedTrackNumber = row.dataset.trackNumber;
           const trackTitle = row.querySelector(".track-title");
@@ -374,14 +374,13 @@ const mainContainer = document.getElementById('main-container')
           }
     
           if (row.classList.contains("selected")) {
-            mySong.pause()
+            mySong.pause();
             row.classList.remove("selected");
             trackTitle.classList.remove("text-success");
             trackTitle.classList.add("text-light");
             row.querySelector(".text-secondary").textContent =
               selectedTrackNumber;
           } else {
-            
             trackRows.forEach((trackRow) => {
               trackRow.classList.remove("selected");
               trackRow
@@ -390,7 +389,6 @@ const mainContainer = document.getElementById('main-container')
               trackRow.querySelector(".track-title").classList.add("text-light");
               trackRow.querySelector(".text-secondary").textContent =
                 trackRow.dataset.trackNumber;
-                
             });
     
             row.classList.add("selected");
