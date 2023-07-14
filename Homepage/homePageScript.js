@@ -116,7 +116,7 @@ const homePageRend2 = function() {
 
         generateAverageColor(coverImage)
           .then((color) => {
-            card.style.background = `linear-gradient(to bottom right, ${color} 0%, #171717 30%)`;
+            card.style.background = `linear-gradient(to bottom right, ${color} 0%, #171717 20%)`;
             card.style.backgroundRepeat = 'no-repeat';
             card.style.backgroundSize = 'cover';
           })
@@ -138,12 +138,12 @@ const homePageRend2 = function() {
         
     const play = newDiv.querySelector('.bi-play-circle');
     play.addEventListener('click', function () {
-      if (play.classList.contains('bi-play-circle-fill')) {
-        play.classList.remove('bi-play-circle-fill')
+      if (play.classList.contains('bi-play-circle')) {
+        play.classList.remove('bi-play-circle')
         play.classList.add('bi-pause-circle-fill')
       } else {
         play.classList.remove('bi-pause-circle-fill')
-        play.classList.add('bi-play-circle-fill')
+        play.classList.add('bi-play-circle')
       }
     })
       })
