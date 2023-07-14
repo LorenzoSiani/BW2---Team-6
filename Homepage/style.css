@@ -34,8 +34,8 @@ ul {
     border-radius: 5px;
 }
 #artist-img {
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     border-radius: 40px;
     margin-right: 5px;
     
@@ -159,3 +159,14 @@ a, a:hover, a:focus, a:active {
   border-radius: 2px;
   font-size: 0.8em;
   }
+  /*dropdown*/
+  .dropdown{
+
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.582);
+    
+    margin-right: 30px;
+    margin-top: 10px;
+    border-radius: 60px;
+}

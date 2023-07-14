@@ -66,7 +66,7 @@ fetch(artistUrl + artistId
     <div id="background-img" style="background-image: url('${detail.picture_xl}'); ">
       <h3 class="detailName mx-3">${detail.name}</h3>
       <i id="arrow" class="bi bi-arrow-left-short position-absolute" style="top: 0; transform: translateY(2%); left: 20px;"></i>
-      <p id="ascoltatori" class="p-1 mx-3 text-left text-secondary" >${detail.nb_fan} Ascoltatori Mensili</p>
+      <p id="ascoltatori" class="p-1 mx-3 text-left text-light mb-4" >${detail.nb_fan} Ascoltatori Mensili</p>
       </div>
 
   </div>
@@ -88,7 +88,7 @@ fetch(artistUrl + artistId
    
 
 
-<div class="d-flex justify-content-start p-2 mx-5">
+<div class="d-lg-none justify-content-start p-2 mx-5 d-flex">
   <div>
     <img id="artist-img" src="${detail.picture}" alt="" />
   </div>
