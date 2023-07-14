@@ -19,7 +19,7 @@ const homePageRend = function(){
             newDiv.classList.add('col')
             newDiv.innerHTML=`
             
-              <div class="card h-100 img-card p-2 text-center g-4">
+              <div class="card h-100 w-auto img-card p-2 text-center g-4">
                 <img src="${detail.cover_medium}" class="card-img-top" alt="..." />
                 <div class="card-body">
                   <a href="http://127.0.0.1:5500/AlbumPage/album.html?id=${detail.id}" class="text-light f-4 fw-medium">${detail.title}</a>
