@@ -97,12 +97,14 @@ a, a:hover, a:focus, a:active {
 .mainCards {
     background: rgb(175, 145, 144);
     margin: 20px;
+   
 }
 
 .mainCards2 {
     background: rgb(175, 145, 144);
     background: linear-gradient(151deg, rgba(152,69,64,1) 0%, rgba(36,36,36,1) 18%);
     margin: 20px;
+    border-radius: 20px;
 }
 
 #dot {
