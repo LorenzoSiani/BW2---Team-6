@@ -132,5 +132,8 @@ a, a:hover, a:focus, a:active {
     padding-bottom: 50px;
 }
 
-
+#soundbar-img{
+    width: 50px;
+    margin-top: 5px;
+}
    

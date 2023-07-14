@@ -19,13 +19,16 @@ const homePageRend = function() {
         let newDiv = document.createElement('div');
         newDiv.classList.add('col');
         newDiv.innerHTML = `
-          <div class="card img-card p-2">
-            <img src="${detail.cover_medium}" class="card-img-top " alt="...">
-            <div class="card-body">
-              <a href="http://127.0.0.1:5500/AlbumPage/album.html?id=${detail.id}" class="text-light f-4 fw-medium">${detail.title}</a>
-              <a href="http://127.0.0.1:5500/ArtistPage/artist.html?id=${detail.artist.id}" class="text-light f-6 fw-lighter">${detail.artist.name}</a>
-            </div>
-          </div>
+        <div class="card h-100 w-auto img-card p-2 text-center g-4">
+        <img src="${detail.cover_medium}" class="card-img-top" alt="..." />
+        <div class="card-body">
+          <a href="http://127.0.0.1:5500/AlbumPage/album.html?id=${detail.id}" class="text-light f-4 fw-medium">${detail.title}</a>
+          <a href="http://127.0.0.1:5500/ArtistPage/artist.html?id=${detail.artist.id}" class="text-light f-6 fw-lighter">${detail.artist.name}</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
         `;
         albumCont.appendChild(newDiv);
       })
