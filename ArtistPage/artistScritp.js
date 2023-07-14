@@ -201,7 +201,7 @@ const arrow = document.getElementById('arrow')
         })
 
 
-        function addClickEventToTrackRows() {
+              function addClickEventToTrackRows() {
           const trackRows = document.querySelectorAll(".track-row");
           trackRows.forEach((row) => {
             row.addEventListener("click", function () {
@@ -270,6 +270,19 @@ const arrow = document.getElementById('arrow')
         }
         
         addClickEventToTrackRows();
+        // Add a resize event listener to the window object
+        window.addEventListener("resize", function () {
+         // Re-evaluate the screen size check
+         if (window.matchMedia("(max-width: 767px)").matches) {
+           // Show the current song bar on smaller screens
+           const currentSongBar = document.querySelector(".current-song-bar");
+           currentSongBar.style.display = "flex";
+         } else {
+           // Hide the current song bar on larger screens
+           const currentSongBar = document.querySelector(".current-song-bar");
+           currentSongBar.style.display = "none";
+         }
+});
         // Add a resize event listener to the window object
         window.addEventListener("resize", function () {
          // Re-evaluate the screen size check
