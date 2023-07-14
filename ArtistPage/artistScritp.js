@@ -202,34 +202,76 @@ const arrow = document.getElementById('arrow')
 
 
         function addClickEventToTrackRows() {
-          const trackRows = document.querySelectorAll('.track-row');
-          trackRows.forEach(row => {
-            row.addEventListener('click', function() {
+          const trackRows = document.querySelectorAll(".track-row");
+          trackRows.forEach((row) => {
+            row.addEventListener("click", function () {
               const selectedTrackNumber = row.dataset.trackNumber;
-              const trackTitle = row.querySelector('.track-title');
+              const trackTitle = row.querySelector(".track-title");
         
-              if (row.classList.contains('selected')) {
-                row.classList.remove('selected');
-                trackTitle.classList.remove('text-success');
-                trackTitle.classList.add('text-light');
-                row.querySelector('.text-secondary').textContent = selectedTrackNumber;
+              const trackIndex = selectedTrackNumber - 1;
+              const track = brani.data[trackIndex];
+        
+              // Update the album cover image
+              const img = document.querySelector("#album-cover");
+              img.src = track.album.cover_small;
+        
+              // Update the current song bar or footer depending on screen size
+              if (window.matchMedia("(max-width: 767px)").matches) {
+                // Update the current song bar on smaller screens
+                const currentSongBar = document.querySelector(".current-song-bar");
+                const currentSongTitle = currentSongBar.querySelector(".song-title");
+                const currentSongArtist = currentSongBar.querySelector(".song-artist");
+        
+                currentSongTitle.textContent = track.title;
+                currentSongArtist.textContent = track.artist.name;
+        
+                // Show the current song bar
+                currentSongBar.style.display = "flex";
               } else {
-                trackRows.forEach(trackRow => {
-                  trackRow.classList.remove('selected');
-                  trackRow.querySelector('.track-title').classList.remove('text-success');
-                  trackRow.querySelector('.track-title').classList.add('text-light');
-                  trackRow.querySelector('.text-secondary').textContent = trackRow.dataset.trackNumber;
+                // Update the footer on larger screens
+                const footer = document.querySelector("footer");
+                const footerSongTitle = footer.querySelector(".fs-5.text.mb-0");
+                const footerSongArtist = footer.querySelector(
+                  ".d-none.d-md-block.fs-6.text.mt-0.fw-light"
+                );
+        
+                footerSongTitle.textContent = track.title;
+                footerSongArtist.textContent = track.artist.name;
+        
+                // Hide the current song bar
+                const currentSongBar = document.querySelector(".current-song-bar");
+                currentSongBar.style.display = "none";
+              }
+        
+              if (row.classList.contains("selected")) {
+                row.classList.remove("selected");
+                trackTitle.classList.remove("text-success");
+                trackTitle.classList.add("text-light");
+                row.querySelector(".text-secondary").textContent =
+                  selectedTrackNumber;
+              } else {
+                trackRows.forEach((trackRow) => {
+                  trackRow.classList.remove("selected");
+                  trackRow
+                    .querySelector(".track-title")
+                    .classList.remove("text-success");
+                  trackRow.querySelector(".track-title").classList.add("text-light");
+                  trackRow.querySelector(".text-secondary").textContent =
+                    trackRow.dataset.trackNumber;
                 });
         
-                row.classList.add('selected');
-                trackTitle.classList.remove('text-light');
-                trackTitle.classList.add('text-success');
-                row.querySelector('.text-secondary').innerHTML = '<i class="bi bi-play-fill text-success fs-3"></i>';
+                row.classList.add("selected");
+                trackTitle.classList.remove("text-light");
+                trackTitle.classList.add("text-success");
+                row.querySelector(".text-secondary").innerHTML =
+                  '<i class="bi bi-play-fill text-success fs-3"></i>';
               }
             });
           });
         }
+        
         addClickEventToTrackRows();
+        
     })
     const coverImage = detail.picture_xl
     generateAverageColor(coverImage)
