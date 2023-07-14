@@ -78,7 +78,7 @@ fetch(artistUrl + artistId
        <button  class="not-clicked ">Segui</button>
 
         <i class="bi bi-three-dots-vertical text-secondary d-inline-block d-lg-none"></i>
-        <i class="bi bi-three-dots text-secondary d-none d-lg-inline-block"></i>
+        <i class="bi bi-three-dots text-secondary d-none d-lg-inline-block fs-5 m-3"></i>
         </div>
         <div id="second-comands">
           <i id="shuffle" class="bi bi-shuffle text-secondary"></i>
