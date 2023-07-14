@@ -79,7 +79,11 @@ function getRandomColor() {
   cards.forEach(function(card) {
     card.style.backgroundColor = getRandomColor();
   });
-
+  
+  const arrow = document.getElementById('arrow')
+    arrow.addEventListener('click', function () {
+      history.back();
+    })
 
 // RIMUOVI ICONA DA SEARCBOX
 
